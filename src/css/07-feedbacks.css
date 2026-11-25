@@ -1,0 +1,76 @@
+/* ---------------------------------------------------------------- feedbacks
+   Modelo dos depoimentos da 0115 F3: cartão de liquid glass no centro, por cima de uma parede
+   de fotos inclinada em 3D nas laterais (fotos reais do Ricardo treinando), com luz cobre.  */
+.feedbacks { background: radial-gradient(50% 50% at 50% 55%, rgb(217 130 63 / .16), transparent 70%), var(--preto); overflow: clip; }
+.faixa { display: flex; align-items: center; gap: 24px; font-family: var(--titulo); font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.faixa::before { content: ''; order: 1; flex: 1; height: 1px; background: currentColor; opacity: .22; }
+.faixa__fim { order: 2; color: var(--texto-2); }
+.faixa__ponto { display: inline-flex; align-items: center; gap: 12px; }
+.faixa__ponto::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--cobre); box-shadow: 0 0 0 4px rgb(217 130 63 / .18); }
+.feedbacks__titulo { margin: 48px auto 0; max-width: 760px; text-align: center; font-size: 64px; }
+
+.feedbacks__palco { position: relative; display: grid; place-items: center; padding: 56px 0; perspective: 1600px; }
+/* parede: duas colunas de cada lado, giradas pra dentro, sumindo no preto nas pontas */
+.parede { position: absolute; top: 0; bottom: 0; display: flex; gap: 16px; width: 34vw; align-items: center; -webkit-mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent); mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent); pointer-events: none; }
+.parede--esq { left: -2vw; transform: rotateY(24deg); transform-origin: 100% 50%; }
+.parede--dir { right: -2vw; transform: rotateY(-24deg); transform-origin: 0 50%; flex-direction: row-reverse; }
+.parede__col { display: flex; flex-direction: column; gap: 16px; flex: 1; }
+.parede__col:nth-child(2) { margin-top: 90px; }
+.parede__foto { border-radius: 20px; overflow: hidden; aspect-ratio: 3 / 4; filter: brightness(.6) saturate(.9); }
+.parede__foto img { width: 100%; height: 100%; object-fit: cover; }
+/* as colunas sobem e descem devagar, em sentidos opostos (só transform, pausa fora da tela) */
+.parede__col { animation: parede 14s ease-in-out infinite alternate; }
+.parede__col:nth-child(2) { animation-direction: alternate-reverse; }
+.feedbacks:not(.feedbacks--visivel) .parede__col { animation-play-state: paused; }
+@keyframes parede { from { transform: translate3d(0, -30px, 0); } to { transform: translate3d(0, 30px, 0); } }
+
+/* cartão de vidro do depoimento */
+.depo { position: relative; z-index: 1; width: min(100% - 48PX, 860px); padding: 48px 56px 40px; border-radius: 36px; background: linear-gradient(180deg, rgb(40 32 24 / .55), rgb(20 16 12 / .45)); }
+.depo::after { content: ''; position: absolute; left: 20%; right: 20%; bottom: -1px; height: 1px; background: linear-gradient(90deg, transparent, rgb(240 168 103 / .8), transparent); }
+.depo__aspas { width: 64px; height: 48px; fill: var(--cobre); }
+.depo__lista { display: grid; margin-top: 24px; }
+.dep { grid-area: 1 / 1; opacity: 0; visibility: hidden; transform: translate3d(0, 10px, 0); filter: blur(8px); transition: opacity .6s var(--ease), transform .8s var(--ease), filter .6s var(--ease), visibility 0s .8s; }
+.dep--ativo { opacity: 1; visibility: visible; transform: none; filter: none; transition-delay: .12s, .12s, .12s, 0s; }
+.dep__texto p { font-size: 30px; line-height: 1.38; letter-spacing: -.015em; color: var(--branco); text-wrap: pretty; }
+.dep__quem { display: flex; align-items: center; gap: 16px; margin-top: 32px; }
+.dep__quem > span { display: flex; flex-direction: column; line-height: 1.3; }
+.dep__quem strong { font-family: var(--titulo); font-size: 19px; font-weight: 650; }
+.dep__quem > span > span { font-size: 15px; color: var(--texto); }
+.dep__foto { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid rgb(217 130 63 / .6); }
+.dep__foto--letra { display: grid; place-items: center; font-family: var(--titulo); font-size: 22px; font-weight: 700; color: var(--tinta); background: linear-gradient(180deg, #F0A060, var(--cobre)); }
+.depo__nav { position: absolute; right: 56px; bottom: 40px; display: flex; align-items: center; gap: 12px; }
+.depo__conta { margin-left: 12px; font-family: var(--titulo); font-size: 16px; font-weight: 600; color: var(--texto); font-variant-numeric: tabular-nums; }
+.depo__barra { position: absolute; left: 56px; right: 56px; bottom: 18px; height: 2px; border-radius: 2px; background: rgb(255 255 255 / .08); overflow: hidden; }
+.depo__barra span { position: absolute; inset: 0; background: var(--cobre); transform: scaleX(0); transform-origin: left; }
+.depo__barra span.depo__barra--anda { transform: scaleX(1); transition: transform 7s linear; }
+
+.feedbacks__fim { display: flex; justify-content: center; margin-top: 8px; }
+
+@media (max-width: 74.99em) {
+  .feedbacks__titulo { font-size: clamp(40PX, 5.6vw, 56PX); }
+  .dep__texto p { font-size: 24PX; }
+  .parede { width: 30vw; }
+}
+@media (max-width: 47.99em) {
+  .faixa { font-size: 11PX; gap: 14PX; }
+  .feedbacks__titulo { margin-top: 32PX; font-size: clamp(32PX, 9.4vw, 40PX); }
+  .feedbacks__palco { padding: 40PX 0 32PX; }
+  .parede { width: 44vw; top: 6%; bottom: 6%; opacity: .7; }
+  .parede--esq { left: -18vw; }
+  .parede--dir { right: -18vw; }
+  .depo { padding: 30PX 22PX 92PX; border-radius: 26PX; }
+  .depo__aspas { width: 44PX; height: 33PX; }
+  .dep__texto p { font-size: 18.5PX; }
+  .dep__quem { margin-top: 22PX; gap: 12PX; }
+  .dep__foto { width: 48PX; height: 48PX; }
+  .depo__nav { left: 22PX; right: 22PX; bottom: 30PX; }
+  .depo__nav .redondo { width: 44PX; height: 44PX; }
+  .depo__conta { margin-left: auto; }
+  .depo__barra { left: 22PX; right: 22PX; bottom: 16PX; }
+  .feedbacks__fim .botao { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .parede__col { animation: none; }
+  .dep { transition: none; }
+  .depo__barra { display: none; }
+}

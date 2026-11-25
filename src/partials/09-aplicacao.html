@@ -1,0 +1,76 @@
+<section class="aplicacao cv" id="aplicar" aria-labelledby="aplicar-titulo" style="--cvh:1000px" data-zap="{{cfg.whatsapp}}">
+  <div class="painel painel--cobre aplicacao__painel">
+    <div class="aplicacao__cores" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="caixa aplicacao__grade">
+      <div class="aplicacao__texto">
+        <span class="rotulo" data-revela>Sua vaga</span>
+        <h2 class="titulo aplicacao__titulo" id="aplicar-titulo" data-palavras data-revela="palavras">Quanto tempo mais você vai deixar seu corpo pra depois?</h2>
+        <p data-revela style="--atraso:.2s">Preenche aqui e a gente conversa. Eu leio cada aplicação e respondo pessoalmente, pelo WhatsApp.</p>
+        <ul class="aplicacao__checks">
+          <li data-revela="grade" style="--i:0"><i data-i="check" data-w="bold"></i>Menos de 2 minutos</li>
+          <li data-revela="grade" style="--i:1"><i data-i="check" data-w="bold"></i>A conversa continua no WhatsApp</li>
+          <li data-revela="grade" style="--i:2"><i data-i="check" data-w="bold"></i>Sem compromisso</li>
+        </ul>
+      </div>
+
+      <div class="aplicacao__caixa vidro" data-revela="direita" data-form-lugar>
+        <noscript><p class="aplicacao__sem-js">Pra se aplicar, <a href="{{wa:Olá, Ricardo! Vim pelo site e quero entrar na consultoria.}}">fala comigo direto no WhatsApp</a>.</p></noscript>
+      </div>
+      <!-- o formulário entra pelo JS depois do load: form no HTML faz o autofill do navegador
+           forçar layout na 1ª pintura (memória form-autofill-layout-forcado) -->
+      <template data-form-molde>
+        <form class="form" data-form novalidate>
+          <div class="form__linha">
+            <label class="campo"><span>Seu nome</span><input type="text" name="nome" autocomplete="given-name" placeholder="Seu nome" required maxlength="60"></label>
+            <label class="campo campo--idade"><span>Sua idade</span><input type="text" name="idade" inputmode="numeric" autocomplete="off" placeholder="Sua idade" maxlength="3"></label>
+          </div>
+          <fieldset class="grupo" data-grupo="objetivo">
+            <legend>Seu objetivo</legend>
+            <div class="chips chips--2">
+              <label class="chip"><input type="radio" name="objetivo" value="Perder gordura"><span>Perder gordura</span></label>
+              <label class="chip"><input type="radio" name="objetivo" value="Ganhar massa"><span>Ganhar massa</span></label>
+              <label class="chip"><input type="radio" name="objetivo" value="Recuperar força e disposição"><span>Força e disposição</span></label>
+              <label class="chip"><input type="radio" name="objetivo" value="Saúde"><span>Saúde</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="grupo" data-grupo="dias">
+            <legend>Quantos dias por semana você consegue treinar?</legend>
+            <div class="chips chips--4">
+              <label class="chip"><input type="radio" name="dias" value="2"><span>2</span></label>
+              <label class="chip"><input type="radio" name="dias" value="3"><span>3</span></label>
+              <label class="chip"><input type="radio" name="dias" value="4"><span>4</span></label>
+              <label class="chip"><input type="radio" name="dias" value="5 ou mais"><span>5 ou mais</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="grupo" data-grupo="local">
+            <legend>Onde vai treinar?</legend>
+            <div class="chips chips--2">
+              <label class="chip"><input type="radio" name="local" value="Academia"><span>Academia</span></label>
+              <label class="chip"><input type="radio" name="local" value="Em casa"><span>Em casa</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="grupo" data-grupo="experiencia">
+            <legend>Já treinou antes?</legend>
+            <div class="chips chips--3">
+              <label class="chip"><input type="radio" name="experiencia" value="Nunca treinei"><span>Nunca</span></label>
+              <label class="chip"><input type="radio" name="experiencia" value="Já treinei e parei"><span>Já treinei e parei</span></label>
+              <label class="chip"><input type="radio" name="experiencia" value="Treino hoje"><span>Treino hoje</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="grupo" data-grupo="plano">
+            <legend>Qual plano te interessa? <span class="grupo__opc">opcional</span></legend>
+            <div class="chips chips--2">
+              <label class="chip"><input type="radio" name="plano" value="Apenas Treino"><span>Apenas Treino</span></label>
+              <label class="chip"><input type="radio" name="plano" value="Pro Performance (treino + nutricionista)"><span>Pro Performance</span></label>
+              <label class="chip"><input type="radio" name="plano" value="Elite Multidisciplinar (treino + nutrição + médico)"><span>Elite 360º</span></label>
+              <label class="chip"><input type="radio" name="plano" value="Ainda não sei"><span>Ainda não sei</span></label>
+            </div>
+          </fieldset>
+          <p class="form__erro" data-form-erro role="alert"></p>
+          <button type="submit" class="botao botao--claro form__enviar" data-brilho><span class="brilho" aria-hidden="true"><span class="brilho__volta"><span class="brilho__ponto"></span></span></span><span class="brilho-fio" aria-hidden="true"><span class="brilho__ponto"></span></span>Quero minha vaga<i data-i="arrow-right" data-w="bold" class="i--seta"></i></button>
+          <p class="form__nota"><i data-i="lock-simple" data-w="regular"></i>Seus dados só são usados pra eu te responder.</p>
+        </form>
+      </template>
+    </div>
+  </div>
+</section>

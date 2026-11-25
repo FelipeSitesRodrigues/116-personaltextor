@@ -1,0 +1,20 @@
+{
+  "dominio": "",
+  "indexar": false,
+  "whatsapp": "5500000000000",
+  "descricao": "Consultoria online integrada para homens acima dos 35: treino individualizado com o Ricardo Textor, nutricionista e acompanhamento médico num protocolo só, com planos de 6 e 12 meses e suporte pelo WhatsApp.",
+  "redes": {
+    "instagram": "https://www.instagram.com/personaltextor/"
+  },
+  "pendencias": [
+    "WHATSAPP: o número do Ricardo ainda não veio (5500000000000 é espaço reservado e não abre conversa)",
+    "indexar false e dominio vazio até publicar",
+    "Depoimentos (src/dados/depoimentos.json): os textos são EXEMPLO, agora com os nomes e números dos casos da apresentação. Trocar pelos prints/textos reais antes de publicar",
+    "Antes e depois: Lucas, Jefferson e a esposa do casal vieram da apresentação (512 px). Pedir as fotos originais e a autorização de cada aluno, e o nome/idade do casal",
+    "Nutricionista e médico: nome, registro (CRN/CRM) e foto pra mostrar quem são. Confirmar se os exames do check-up estão inclusos no Elite ou são pagos à parte",
+    "Planos: valores da apresentação de 11/2026 (sem os descontos de fechamento na call). Confirmar se ele quer preço aberto no site e se o parcelado é no cartão",
+    "Sobre: retratos recortados do post. Pedir originais e autorização da esposa pra foto da família",
+    "Selo 'Resposta no mesmo dia': confirmar",
+    "Cidade e CREF, se ele quiser mostrar"
+  ]
+}

@@ -1,0 +1,26 @@
+<section class="feedbacks secao cv" id="feedbacks" aria-labelledby="feedbacks-titulo" style="--cvh:900px">
+  <div class="caixa">
+    <div class="faixa" data-revela><span class="faixa__ponto">Feedbacks</span><span class="faixa__fim">Quem está no processo</span></div>
+    <h2 class="titulo feedbacks__titulo" id="feedbacks-titulo" data-palavras data-revela="palavras">Quem está no processo conta melhor.</h2>
+  </div>
+
+  <div class="feedbacks__palco">
+    <div class="parede parede--esq" aria-hidden="true"><!-- @gerar parede-esq --></div>
+    <div class="parede parede--dir" aria-hidden="true"><!-- @gerar parede-dir --></div>
+
+    <div class="depo vidro" data-revela="zoom" data-depo aria-roledescription="carrossel" aria-label="Depoimentos de alunos">
+      <svg class="depo__aspas" viewBox="0 0 64 48" aria-hidden="true"><path d="M0 48V28C0 12 9 3 26 0l3 7C19 10 14 16 14 24h12v24H0Zm35 0V28c0-16 9-25 26-28l3 7c-10 3-15 9-15 17h12v24H35Z"/></svg>
+      <div class="depo__lista" aria-live="polite"><!-- @gerar depoimentos --></div>
+      <div class="depo__nav">
+        <button type="button" class="redondo" data-depo-ant aria-label="Depoimento anterior"><i data-i="arrow-left" data-w="bold"></i></button>
+        <button type="button" class="redondo" data-depo-prox aria-label="Próximo depoimento"><i data-i="arrow-right" data-w="bold"></i></button>
+        <span class="depo__conta"><span data-depo-atual>01</span> / <!-- @gerar dep-total --></span>
+      </div>
+      <span class="depo__barra" aria-hidden="true"><span data-depo-barra></span></span>
+    </div>
+  </div>
+
+  <div class="caixa feedbacks__fim" data-revela>
+    <a class="botao botao--cobre" href="#aplicar" data-brilho><span class="brilho" aria-hidden="true"><span class="brilho__volta"><span class="brilho__ponto"></span></span></span><span class="brilho-fio" aria-hidden="true"><span class="brilho__ponto"></span></span>Quero minha vaga<i data-i="arrow-right" data-w="bold" class="i--seta"></i></a>
+  </div>
+</section>

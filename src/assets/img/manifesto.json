@@ -1,0 +1,902 @@
+{
+ "hero-fundo-960.avif": {
+  "w": 960,
+  "h": 540,
+  "kb": 7
+ },
+ "hero-fundo-960.webp": {
+  "w": 960,
+  "h": 540,
+  "kb": 11
+ },
+ "hero-fundo-1440.avif": {
+  "w": 1440,
+  "h": 810,
+  "kb": 10
+ },
+ "hero-fundo-1440.webp": {
+  "w": 1440,
+  "h": 810,
+  "kb": 17
+ },
+ "hero-fundo-1672.avif": {
+  "w": 1672,
+  "h": 941,
+  "kb": 12
+ },
+ "hero-fundo-1672.webp": {
+  "w": 1672,
+  "h": 941,
+  "kb": 21
+ },
+ "ricardo-420.avif": {
+  "w": 420,
+  "h": 753,
+  "kb": 19
+ },
+ "ricardo-420.webp": {
+  "w": 420,
+  "h": 753,
+  "kb": 29
+ },
+ "ricardo-640.avif": {
+  "w": 640,
+  "h": 1147,
+  "kb": 34
+ },
+ "ricardo-640.webp": {
+  "w": 640,
+  "h": 1147,
+  "kb": 55
+ },
+ "ricardo-874.avif": {
+  "w": 874,
+  "h": 1566,
+  "kb": 51
+ },
+ "ricardo-874.webp": {
+  "w": 874,
+  "h": 1566,
+  "kb": 80
+ },
+ "hero-cel-480.avif": {
+  "w": 480,
+  "h": 853,
+  "kb": 13
+ },
+ "hero-cel-480.webp": {
+  "w": 480,
+  "h": 853,
+  "kb": 18
+ },
+ "hero-cel-720.avif": {
+  "w": 720,
+  "h": 1279,
+  "kb": 24
+ },
+ "hero-cel-720.webp": {
+  "w": 720,
+  "h": 1279,
+  "kb": 33
+ },
+ "hero-cel-941.avif": {
+  "w": 941,
+  "h": 1672,
+  "kb": 37
+ },
+ "hero-cel-941.webp": {
+  "w": 941,
+  "h": 1672,
+  "kb": 49
+ },
+ "dor-fundo-960.avif": {
+  "w": 960,
+  "h": 540,
+  "kb": 9
+ },
+ "dor-fundo-960.webp": {
+  "w": 960,
+  "h": 540,
+  "kb": 14
+ },
+ "dor-fundo-1440.avif": {
+  "w": 1440,
+  "h": 810,
+  "kb": 15
+ },
+ "dor-fundo-1440.webp": {
+  "w": 1440,
+  "h": 810,
+  "kb": 26
+ },
+ "dor-fundo-1672.avif": {
+  "w": 1672,
+  "h": 941,
+  "kb": 19
+ },
+ "dor-fundo-1672.webp": {
+  "w": 1672,
+  "h": 941,
+  "kb": 31
+ },
+ "dor-pessoa-960.avif": {
+  "w": 960,
+  "h": 540,
+  "kb": 12
+ },
+ "dor-pessoa-960.webp": {
+  "w": 960,
+  "h": 540,
+  "kb": 23
+ },
+ "dor-pessoa-1440.avif": {
+  "w": 1440,
+  "h": 810,
+  "kb": 19
+ },
+ "dor-pessoa-1440.webp": {
+  "w": 1440,
+  "h": 810,
+  "kb": 41
+ },
+ "dor-pessoa-1672.avif": {
+  "w": 1672,
+  "h": 941,
+  "kb": 22
+ },
+ "dor-pessoa-1672.webp": {
+  "w": 1672,
+  "h": 941,
+  "kb": 46
+ },
+ "ganho-pai-filho-400.avif": {
+  "w": 400,
+  "h": 680,
+  "kb": 11
+ },
+ "ganho-pai-filho-400.webp": {
+  "w": 400,
+  "h": 680,
+  "kb": 17
+ },
+ "ganho-pai-filho-544.avif": {
+  "w": 544,
+  "h": 925,
+  "kb": 16
+ },
+ "ganho-pai-filho-544.webp": {
+  "w": 544,
+  "h": 925,
+  "kb": 24
+ },
+ "ganho-terra-400.avif": {
+  "w": 400,
+  "h": 683,
+  "kb": 7
+ },
+ "ganho-terra-400.webp": {
+  "w": 400,
+  "h": 683,
+  "kb": 11
+ },
+ "ganho-terra-542.avif": {
+  "w": 542,
+  "h": 925,
+  "kb": 10
+ },
+ "ganho-terra-542.webp": {
+  "w": 542,
+  "h": 925,
+  "kb": 15
+ },
+ "ganho-praia-400.avif": {
+  "w": 400,
+  "h": 681,
+  "kb": 13
+ },
+ "ganho-praia-400.webp": {
+  "w": 400,
+  "h": 681,
+  "kb": 19
+ },
+ "ganho-praia-543.avif": {
+  "w": 543,
+  "h": 925,
+  "kb": 20
+ },
+ "ganho-praia-543.webp": {
+  "w": 543,
+  "h": 925,
+  "kb": 28
+ },
+ "ganho-filho-academia-400.avif": {
+  "w": 400,
+  "h": 680,
+  "kb": 7
+ },
+ "ganho-filho-academia-400.webp": {
+  "w": 400,
+  "h": 680,
+  "kb": 11
+ },
+ "ganho-filho-academia-544.avif": {
+  "w": 544,
+  "h": 925,
+  "kb": 10
+ },
+ "ganho-filho-academia-544.webp": {
+  "w": 544,
+  "h": 925,
+  "kb": 15
+ },
+ "ganho-corrida-400.avif": {
+  "w": 400,
+  "h": 683,
+  "kb": 7
+ },
+ "ganho-corrida-400.webp": {
+  "w": 400,
+  "h": 683,
+  "kb": 10
+ },
+ "ganho-corrida-542.avif": {
+  "w": 542,
+  "h": 925,
+  "kb": 10
+ },
+ "ganho-corrida-542.webp": {
+  "w": 542,
+  "h": 925,
+  "kb": 14
+ },
+ "ganho-trabalho-400.avif": {
+  "w": 400,
+  "h": 681,
+  "kb": 9
+ },
+ "ganho-trabalho-400.webp": {
+  "w": 400,
+  "h": 681,
+  "kb": 12
+ },
+ "ganho-trabalho-543.avif": {
+  "w": 543,
+  "h": 925,
+  "kb": 13
+ },
+ "ganho-trabalho-543.webp": {
+  "w": 543,
+  "h": 925,
+  "kb": 18
+ },
+ "processo-fundo-960.avif": {
+  "w": 960,
+  "h": 540,
+  "kb": 9
+ },
+ "processo-fundo-960.webp": {
+  "w": 960,
+  "h": 540,
+  "kb": 18
+ },
+ "processo-fundo-1440.avif": {
+  "w": 1440,
+  "h": 810,
+  "kb": 14
+ },
+ "processo-fundo-1440.webp": {
+  "w": 1440,
+  "h": 810,
+  "kb": 28
+ },
+ "ad-leonardo-antes-216.avif": {
+  "w": 216,
+  "h": 288,
+  "kb": 4
+ },
+ "ad-leonardo-antes-216.webp": {
+  "w": 216,
+  "h": 288,
+  "kb": 3
+ },
+ "ad-leonardo-depois-216.avif": {
+  "w": 216,
+  "h": 288,
+  "kb": 7
+ },
+ "ad-leonardo-depois-216.webp": {
+  "w": 216,
+  "h": 288,
+  "kb": 7
+ },
+ "ad-leonardo-depois-224.avif": {
+  "w": 224,
+  "h": 299,
+  "kb": 7
+ },
+ "ad-leonardo-depois-224.webp": {
+  "w": 224,
+  "h": 299,
+  "kb": 7
+ },
+ "ad-luciano-antes-216.avif": {
+  "w": 216,
+  "h": 288,
+  "kb": 5
+ },
+ "ad-luciano-antes-216.webp": {
+  "w": 216,
+  "h": 288,
+  "kb": 5
+ },
+ "ad-luciano-antes-252.avif": {
+  "w": 252,
+  "h": 336,
+  "kb": 6
+ },
+ "ad-luciano-antes-252.webp": {
+  "w": 252,
+  "h": 336,
+  "kb": 6
+ },
+ "ad-luciano-depois-216.avif": {
+  "w": 216,
+  "h": 288,
+  "kb": 4
+ },
+ "ad-luciano-depois-216.webp": {
+  "w": 216,
+  "h": 288,
+  "kb": 4
+ },
+ "ad-luciano-depois-262.avif": {
+  "w": 262,
+  "h": 349,
+  "kb": 6
+ },
+ "ad-luciano-depois-262.webp": {
+  "w": 262,
+  "h": 349,
+  "kb": 5
+ },
+ "ad-lucas-antes-216.avif": {
+  "w": 216,
+  "h": 288,
+  "kb": 4
+ },
+ "ad-lucas-antes-216.webp": {
+  "w": 216,
+  "h": 288,
+  "kb": 4
+ },
+ "ad-lucas-antes-218.avif": {
+  "w": 218,
+  "h": 291,
+  "kb": 5
+ },
+ "ad-lucas-antes-218.webp": {
+  "w": 218,
+  "h": 291,
+  "kb": 4
+ },
+ "ad-lucas-depois-210.avif": {
+  "w": 210,
+  "h": 280,
+  "kb": 5
+ },
+ "ad-lucas-depois-210.webp": {
+  "w": 210,
+  "h": 280,
+  "kb": 4
+ },
+ "ad-jefferson-antes-216.avif": {
+  "w": 216,
+  "h": 288,
+  "kb": 4
+ },
+ "ad-jefferson-antes-216.webp": {
+  "w": 216,
+  "h": 288,
+  "kb": 4
+ },
+ "ad-jefferson-antes-246.avif": {
+  "w": 246,
+  "h": 328,
+  "kb": 5
+ },
+ "ad-jefferson-antes-246.webp": {
+  "w": 246,
+  "h": 328,
+  "kb": 4
+ },
+ "ad-jefferson-depois-216.avif": {
+  "w": 216,
+  "h": 288,
+  "kb": 4
+ },
+ "ad-jefferson-depois-216.webp": {
+  "w": 216,
+  "h": 288,
+  "kb": 3
+ },
+ "ad-jefferson-depois-246.avif": {
+  "w": 246,
+  "h": 328,
+  "kb": 6
+ },
+ "ad-jefferson-depois-246.webp": {
+  "w": 246,
+  "h": 328,
+  "kb": 4
+ },
+ "ad-ele-antes-216.avif": {
+  "w": 216,
+  "h": 288,
+  "kb": 6
+ },
+ "ad-ele-antes-216.webp": {
+  "w": 216,
+  "h": 288,
+  "kb": 6
+ },
+ "ad-ele-antes-250.avif": {
+  "w": 250,
+  "h": 333,
+  "kb": 7
+ },
+ "ad-ele-antes-250.webp": {
+  "w": 250,
+  "h": 333,
+  "kb": 7
+ },
+ "ad-ele-depois-216.avif": {
+  "w": 216,
+  "h": 288,
+  "kb": 6
+ },
+ "ad-ele-depois-216.webp": {
+  "w": 216,
+  "h": 288,
+  "kb": 6
+ },
+ "ad-ele-depois-264.avif": {
+  "w": 264,
+  "h": 352,
+  "kb": 8
+ },
+ "ad-ele-depois-264.webp": {
+  "w": 264,
+  "h": 352,
+  "kb": 8
+ },
+ "ad-ela-antes-166.avif": {
+  "w": 166,
+  "h": 221,
+  "kb": 5
+ },
+ "ad-ela-antes-166.webp": {
+  "w": 166,
+  "h": 221,
+  "kb": 5
+ },
+ "ad-ela-depois-164.avif": {
+  "w": 164,
+  "h": 219,
+  "kb": 4
+ },
+ "ad-ela-depois-164.webp": {
+  "w": 164,
+  "h": 219,
+  "kb": 3
+ },
+ "ad-ricardo-antes-280.avif": {
+  "w": 280,
+  "h": 374,
+  "kb": 11
+ },
+ "ad-ricardo-antes-280.webp": {
+  "w": 280,
+  "h": 374,
+  "kb": 14
+ },
+ "ad-ricardo-antes-420.avif": {
+  "w": 420,
+  "h": 560,
+  "kb": 18
+ },
+ "ad-ricardo-antes-420.webp": {
+  "w": 420,
+  "h": 560,
+  "kb": 21
+ },
+ "ad-ricardo-depois-280.avif": {
+  "w": 280,
+  "h": 373,
+  "kb": 9
+ },
+ "ad-ricardo-depois-280.webp": {
+  "w": 280,
+  "h": 373,
+  "kb": 9
+ },
+ "ad-ricardo-depois-420.avif": {
+  "w": 420,
+  "h": 560,
+  "kb": 16
+ },
+ "ad-ricardo-depois-420.webp": {
+  "w": 420,
+  "h": 560,
+  "kb": 14
+ },
+ "sobre-policial-334.avif": {
+  "w": 334,
+  "h": 742,
+  "kb": 23
+ },
+ "sobre-policial-334.webp": {
+  "w": 334,
+  "h": 742,
+  "kb": 21
+ },
+ "sobre-familia-420.avif": {
+  "w": 420,
+  "h": 500,
+  "kb": 20
+ },
+ "sobre-familia-420.webp": {
+  "w": 420,
+  "h": 500,
+  "kb": 21
+ },
+ "sobre-familia-564.avif": {
+  "w": 564,
+  "h": 672,
+  "kb": 31
+ },
+ "sobre-familia-564.webp": {
+  "w": 564,
+  "h": 672,
+  "kb": 30
+ },
+ "sobre-adestrador-332.avif": {
+  "w": 332,
+  "h": 742,
+  "kb": 24
+ },
+ "sobre-adestrador-332.webp": {
+  "w": 332,
+  "h": 742,
+  "kb": 25
+ },
+ "parede-treino-banco-240.avif": {
+  "w": 240,
+  "h": 320,
+  "kb": 3
+ },
+ "parede-treino-banco-240.webp": {
+  "w": 240,
+  "h": 320,
+  "kb": 4
+ },
+ "parede-treino-banco-360.avif": {
+  "w": 360,
+  "h": 480,
+  "kb": 5
+ },
+ "parede-treino-banco-360.webp": {
+  "w": 360,
+  "h": 480,
+  "kb": 6
+ },
+ "parede-maquina-240.avif": {
+  "w": 240,
+  "h": 320,
+  "kb": 4
+ },
+ "parede-maquina-240.webp": {
+  "w": 240,
+  "h": 320,
+  "kb": 7
+ },
+ "parede-maquina-360.avif": {
+  "w": 360,
+  "h": 480,
+  "kb": 8
+ },
+ "parede-maquina-360.webp": {
+  "w": 360,
+  "h": 480,
+  "kb": 11
+ },
+ "parede-notebook-240.avif": {
+  "w": 240,
+  "h": 320,
+  "kb": 4
+ },
+ "parede-notebook-240.webp": {
+  "w": 240,
+  "h": 320,
+  "kb": 5
+ },
+ "parede-notebook-360.avif": {
+  "w": 360,
+  "h": 480,
+  "kb": 6
+ },
+ "parede-notebook-360.webp": {
+  "w": 360,
+  "h": 480,
+  "kb": 9
+ },
+ "parede-halter-240.avif": {
+  "w": 240,
+  "h": 320,
+  "kb": 4
+ },
+ "parede-halter-240.webp": {
+  "w": 240,
+  "h": 320,
+  "kb": 6
+ },
+ "parede-halter-360.avif": {
+  "w": 360,
+  "h": 480,
+  "kb": 7
+ },
+ "parede-halter-360.webp": {
+  "w": 360,
+  "h": 480,
+  "kb": 10
+ },
+ "parede-cabo-240.avif": {
+  "w": 240,
+  "h": 320,
+  "kb": 4
+ },
+ "parede-cabo-240.webp": {
+  "w": 240,
+  "h": 320,
+  "kb": 5
+ },
+ "parede-cabo-360.avif": {
+  "w": 360,
+  "h": 480,
+  "kb": 6
+ },
+ "parede-cabo-360.webp": {
+  "w": 360,
+  "h": 480,
+  "kb": 8
+ },
+ "parede-regata-240.avif": {
+  "w": 240,
+  "h": 320,
+  "kb": 4
+ },
+ "parede-regata-240.webp": {
+  "w": 240,
+  "h": 320,
+  "kb": 5
+ },
+ "parede-regata-360.avif": {
+  "w": 360,
+  "h": 480,
+  "kb": 6
+ },
+ "parede-regata-360.webp": {
+  "w": 360,
+  "h": 480,
+  "kb": 8
+ },
+ "parede-remada-240.avif": {
+  "w": 240,
+  "h": 320,
+  "kb": 4
+ },
+ "parede-remada-240.webp": {
+  "w": 240,
+  "h": 320,
+  "kb": 5
+ },
+ "parede-remada-360.avif": {
+  "w": 360,
+  "h": 480,
+  "kb": 6
+ },
+ "parede-remada-360.webp": {
+  "w": 360,
+  "h": 480,
+  "kb": 8
+ },
+ "parede-sentado-240.avif": {
+  "w": 240,
+  "h": 320,
+  "kb": 6
+ },
+ "parede-sentado-240.webp": {
+  "w": 240,
+  "h": 320,
+  "kb": 9
+ },
+ "parede-sentado-360.avif": {
+  "w": 360,
+  "h": 480,
+  "kb": 10
+ },
+ "parede-sentado-360.webp": {
+  "w": 360,
+  "h": 480,
+  "kb": 15
+ },
+ "parede-oculos-240.avif": {
+  "w": 240,
+  "h": 320,
+  "kb": 5
+ },
+ "parede-oculos-240.webp": {
+  "w": 240,
+  "h": 320,
+  "kb": 7
+ },
+ "parede-oculos-360.avif": {
+  "w": 360,
+  "h": 480,
+  "kb": 8
+ },
+ "parede-oculos-360.webp": {
+  "w": 360,
+  "h": 480,
+  "kb": 13
+ },
+ "avatar-luiz-96.avif": {
+  "w": 96,
+  "h": 96,
+  "kb": 2
+ },
+ "avatar-luiz-96.webp": {
+  "w": 96,
+  "h": 96,
+  "kb": 2
+ },
+ "avatar-leonardo-96.avif": {
+  "w": 96,
+  "h": 96,
+  "kb": 1
+ },
+ "avatar-leonardo-96.webp": {
+  "w": 96,
+  "h": 96,
+  "kb": 1
+ },
+ "logo-icone-160.avif": {
+  "w": 160,
+  "h": 53,
+  "kb": 5
+ },
+ "logo-icone-160.webp": {
+  "w": 160,
+  "h": 53,
+  "kb": 6
+ },
+ "logo-icone-320.avif": {
+  "w": 320,
+  "h": 107,
+  "kb": 11
+ },
+ "logo-icone-320.webp": {
+  "w": 320,
+  "h": 107,
+  "kb": 13
+ },
+ "logo-personal-320.avif": {
+  "w": 320,
+  "h": 21,
+  "kb": 3
+ },
+ "logo-personal-320.webp": {
+  "w": 320,
+  "h": 21,
+  "kb": 3
+ },
+ "logo-textor-320.avif": {
+  "w": 320,
+  "h": 55,
+  "kb": 6
+ },
+ "logo-textor-320.webp": {
+  "w": 320,
+  "h": 55,
+  "kb": 7
+ },
+ "logo-textor-640.avif": {
+  "w": 640,
+  "h": 110,
+  "kb": 12
+ },
+ "logo-textor-640.webp": {
+  "w": 640,
+  "h": 110,
+  "kb": 16
+ },
+ "logo-pilha-360.avif": {
+  "w": 360,
+  "h": 187,
+  "kb": 17
+ },
+ "logo-pilha-360.webp": {
+  "w": 360,
+  "h": 187,
+  "kb": 21
+ },
+ "logo-pilha-540.avif": {
+  "w": 540,
+  "h": 280,
+  "kb": 27
+ },
+ "logo-pilha-540.webp": {
+  "w": 540,
+  "h": 280,
+  "kb": 35
+ },
+ "abertura-asa-e.webp": {
+  "w": 111,
+  "h": 148,
+  "kb": 5
+ },
+ "abertura-anilha-e.webp": {
+  "w": 63,
+  "h": 148,
+  "kb": 3
+ },
+ "abertura-punho.webp": {
+  "w": 85,
+  "h": 148,
+  "kb": 4
+ },
+ "abertura-anilha-d.webp": {
+  "w": 65,
+  "h": 148,
+  "kb": 3
+ },
+ "abertura-asa-d.webp": {
+  "w": 111,
+  "h": 148,
+  "kb": 5
+ },
+ "abertura-personal.webp": {
+  "w": 524,
+  "h": 34,
+  "kb": 6
+ },
+ "abertura-letra-0.webp": {
+  "w": 94,
+  "h": 110,
+  "kb": 1
+ },
+ "abertura-letra-1.webp": {
+  "w": 86,
+  "h": 110,
+  "kb": 2
+ },
+ "abertura-letra-2.webp": {
+  "w": 112,
+  "h": 110,
+  "kb": 4
+ },
+ "abertura-letra-3.webp": {
+  "w": 94,
+  "h": 110,
+  "kb": 1
+ },
+ "abertura-letra-4.webp": {
+  "w": 116,
+  "h": 110,
+  "kb": 4
+ },
+ "abertura-letra-5.webp": {
+  "w": 96,
+  "h": 110,
+  "kb": 3
+ }
+}

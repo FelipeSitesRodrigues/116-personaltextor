@@ -1,0 +1,59 @@
+/* ---------------------------------------------------------------- pilares (consultoria integrada)
+   Apresentação nova do Ricardo (11/2026): treino, nutrição e médico num protocolo só. No preto,
+   com duas luzes cobre paradas atrás (vidro precisa de cor atrás). Três lâminas de vidro
+   ligadas por um fio cobre que se desenha na entrada (scaleX), com o número de cada pilar
+   sentado em cima do fio.                                                                   */
+.pilares { background: var(--preto); overflow: clip; isolation: isolate; }
+.pilares__luzes { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.pilares__luzes span { position: absolute; border-radius: 50%; }
+.pilares__luzes span:nth-child(1) { width: 760px; height: 760px; left: 50%; top: 34%; margin-left: -380px; background: radial-gradient(closest-side, rgb(217 130 63 / .34), rgb(217 130 63 / .08) 60%, transparent); }
+.pilares__luzes span:nth-child(2) { width: 480px; height: 480px; left: -8%; top: 60%; background: radial-gradient(closest-side, rgb(180 80 26 / .35), transparent 70%); }
+
+.pilares__cabeca { max-width: 860px; margin: 0 auto 64px; text-align: center; }
+.pilares__titulo { margin: 16px 0 18px; }
+.pilares .sub { max-width: 640px; margin-inline: auto; }
+
+.pilares__trilho { position: relative; padding-top: 28px; }
+.pilares__fio { position: absolute; left: 16.66%; right: 16.66%; top: 27px; height: 2PX; border-radius: 2PX; background: linear-gradient(90deg, rgb(217 130 63 / .2), var(--cobre), rgb(217 130 63 / .2)); box-shadow: 0 0 18px rgb(217 130 63 / .55); transform-origin: 0 50%; }
+.js .pilares__fio[data-revela]:not(.visivel) { opacity: 1; filter: none; transform: scaleX(0); }
+.js .pilares__fio[data-revela] { transition: transform 1.4s var(--ease) .35s; }
+
+.pilares__lista { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.pilar { display: flex; flex-direction: column; align-items: flex-start; padding: 52px 34px 36px; border-radius: 30px; transition: transform .6s var(--ease), border-color .5s var(--ease-hover); }
+.pilar:hover { transform: translateY(-6px); border-color: rgb(217 130 63 / .45); }
+.pilar__no { position: absolute; left: 50%; top: -28px; display: grid; place-items: center; width: 56px; height: 56px; margin-left: -28px; border-radius: 50%; font-family: var(--titulo); font-size: 17px; font-weight: 700; letter-spacing: -.02em; color: var(--tinta); background: linear-gradient(180deg, #F0A060, var(--cobre)); box-shadow: 0 0 0 6px var(--preto), 0 10px 30px -6px rgb(217 130 63 / .7); }
+.pilar__icone { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 20px; border: 1px solid rgb(217 130 63 / .4); background: rgb(217 130 63 / .1); color: var(--cobre); font-size: 34px; }
+.pilar__quem { margin-top: 26px; font-family: var(--titulo); font-size: 12px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--cobre); }
+.pilar h3 { margin-top: 8px; font-size: 27px; letter-spacing: -.03em; line-height: 1.12; }
+.pilar__itens { display: grid; gap: 14px; margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--linha); font-size: 16px; line-height: 1.45; color: var(--texto); }
+.pilar__itens li { display: flex; gap: 12px; align-items: flex-start; }
+.pilar__itens .i { flex: none; margin-top: 3px; width: 20px; height: 20px; padding: 4px; border-radius: 50%; color: var(--cobre); background: rgb(217 130 63 / .14); }
+.pilar__itens strong { font-weight: 650; color: var(--branco); }
+
+.pilares__fim { display: flex; align-items: center; justify-content: center; gap: 28px; margin-top: 52px; text-align: left; }
+.pilares__fim p { max-width: 520px; font-size: 17px; line-height: 1.5; color: var(--texto); }
+.pilares__fim strong { color: var(--branco); font-weight: 650; }
+
+@media (max-width: 74.99em) {
+  .pilar { padding: 48PX 24PX 30PX; }
+  .pilar h3 { font-size: 23PX; }
+  .pilar__itens { font-size: 15PX; }
+}
+/* tablet e celular: empilhados, o fio vira vertical à esquerda ligando os números */
+@media (max-width: 63.99em) {
+  .pilares__cabeca { margin-bottom: 40PX; }
+  .pilares__trilho { padding: 0 0 0 0; }
+  .pilares__lista { grid-template-columns: 1fr; gap: 18PX; max-width: 560PX; margin: 0 auto; }
+  .pilares__fio { display: none; }
+  .pilar { padding: 28PX 24PX 26PX; }
+  .pilar__no { left: auto; right: 22PX; top: 22PX; margin: 0; width: 44PX; height: 44PX; font-size: 15PX; box-shadow: 0 10px 30px -6px rgb(217 130 63 / .6); }
+  .pilares__fim { flex-direction: column; text-align: center; gap: 20PX; }
+}
+@media (max-width: 47.99em) {
+  .pilares__fim .botao { width: 100%; }
+  .pilar__icone { width: 54PX; height: 54PX; font-size: 28PX; border-radius: 16PX; }
+  .pilar__quem { margin-top: 18PX; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .pilares__fio[data-revela]:not(.visivel) { transform: none; }
+}

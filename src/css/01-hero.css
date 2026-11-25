@@ -1,0 +1,80 @@
+/* ---------------------------------------------------------------- hero
+   Camadas: academia escura em desfoque (fundo), luz cobre atrás, o Ricardo recortado no
+   centro (LCP, com preload) e o texto e os cartões de vidro por cima. No celular a foto
+   vertical inteira vira o fundo da seção (memória hero-mobile-foto-de-fundo).             */
+.hero { position: relative; min-height: max(100svh, 760px); display: flex; align-items: center; overflow: clip; isolation: isolate; background: var(--preto); }
+.hero__fundo { position: absolute; inset: -3%; z-index: -3; }
+.hero__fundo picture, .hero__fundo-img { width: 100%; height: 100%; }
+.hero__fundo-img { object-fit: cover; object-position: 50% 40%; animation: hero-fundo 2.6s var(--ease) both; }
+@keyframes hero-fundo { from { transform: scale(1.08); } }
+/* película: escurece a esquerda (texto) e a base, deixa a luz das laterais */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgb(11 11 11 / .8) 0%, rgb(11 11 11 / .35) 36%, rgb(11 11 11 / .08) 58%, rgb(11 11 11 / .4) 100%),
+    linear-gradient(0deg, var(--preto) 0%, rgb(11 11 11 / .55) 12%, transparent 32%);
+}
+.hero__luz { position: absolute; left: 50%; bottom: 6%; z-index: -2; width: 760px; height: 760px; margin-left: -380px; border-radius: 50%; background: radial-gradient(closest-side, rgb(217 130 63 / .26), rgb(217 130 63 / .07) 55%, transparent); animation: hero-luz 3s var(--ease) .3s both; }
+@keyframes hero-luz { from { opacity: 0; transform: scale(.7); } }
+/* o Ricardo: sobe de leve na entrada, sem opacidade (é o LCP: memória lcp-entrada-opacidade-zero) */
+/* altura pela seção (o recorte é alto: pela largura a cabeça passava do topo) */
+.hero__ricardo { position: absolute; left: 0; right: 0; bottom: 0; z-index: -1; height: 86%; display: flex; justify-content: center; pointer-events: none; }
+.hero__ricardo picture { height: 100%; }
+.hero__ricardo-img { width: auto; height: 100%; max-width: none; animation: hero-ricardo 1.6s var(--ease) both; -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 97%); mask-image: linear-gradient(180deg, #000 70%, transparent 97%); }
+@keyframes hero-ricardo { from { transform: translate3d(0, 6%, 0) scale(1.04); } }
+
+.hero__grade { display: grid; grid-template-columns: minmax(0, 500px) 1fr minmax(0, 390px); align-items: center; padding: 130px 0 72px; min-height: max(100svh, 760px); }
+.hero__texto { grid-column: 1; }
+.hero__titulo { margin: 22px 0 26px; font-size: 74px; line-height: .96; letter-spacing: -.05em; }
+.hero__sub { max-width: 430px; font-size: 19px; line-height: 1.55; color: var(--texto); }
+.hero__acao { margin-top: 36px; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+/* itens com um ponto cobre na frente de cada um: quebrando a linha, nenhum ponto fica solto */
+.hero__micro { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; color: var(--texto-2); }
+.hero__micro li { display: flex; align-items: center; gap: 8px; }
+.hero__micro li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--cobre); }
+
+/* cartões de vidro à direita */
+.hero__cartoes { grid-column: 3; display: grid; gap: 18px; }
+.hcard { display: flex; gap: 20px; align-items: flex-start; padding: 24px 26px; border-radius: 22px; transition: transform .5s var(--ease), border-color .4s var(--ease-hover); }
+.hcard:hover { transform: translateX(-6px); border-color: rgb(217 130 63 / .45); }
+.hcard__icone { display: grid; place-items: center; flex: none; width: 54px; height: 54px; border-radius: 14px; border: 1px solid rgb(217 130 63 / .4); background: rgb(217 130 63 / .08); color: var(--cobre); font-size: 28px; }
+.hcard__txt { display: flex; flex-direction: column; gap: 4px; }
+.hcard__rot { font-family: var(--titulo); font-size: 11.5px; font-weight: 600; letter-spacing: .26em; text-transform: uppercase; color: var(--texto-2); }
+.hcard strong { font-family: var(--titulo); font-size: 22px; font-weight: 650; letter-spacing: -.03em; line-height: 1.15; }
+.hcard__txt > span:last-child { font-size: 15px; line-height: 1.45; color: var(--texto); }
+.js .anim-hero-lado { animation: hero-lado 1s var(--ease) var(--atraso, 1s) both; }
+@keyframes hero-lado { from { opacity: 0; transform: translate3d(40px, 0, 0); filter: blur(8px); } }
+
+
+/* abaixo de 1200 os cartões saem e o Ricardo vai pra direita, longe do título */
+@media (max-width: 74.99em) {
+  .hero__cartoes { display: none; }
+  .hero__grade { grid-template-columns: minmax(0, 1fr); }
+  .hero__ricardo { left: 42%; height: 84%; }
+  .hero__texto { max-width: 480PX; }
+  .hero__titulo { font-size: clamp(50PX, 6vw, 64PX); }
+}
+/* celular (pedido do Felipe, 2026-11-25): headline em cima da cabeça, a foto do Ricardo no
+   meio e subheadline e botões embaixo do corpo. A grade e o texto viram "display: contents"
+   pra que rótulo, título, foto, sub e ações sejam irmãos na mesma grade do hero. */
+@media (max-width: 47.99em) {
+  .hero { display: grid; grid-template-columns: 20PX minmax(0, 1fr) 20PX; grid-template-areas: ". rot ." ". tit ." "foto foto foto" ". sub ." ". acao ."; align-content: start; align-items: start; min-height: 0; padding: 104PX 0 40PX; }
+  .hero__fundo, .hero__luz { display: none; }
+  .hero::before { z-index: -2; background: radial-gradient(80% 40% at 50% 46%, rgb(217 130 63 / .22), transparent 70%); }
+  .hero__grade, .hero__texto { display: contents; }
+  .hero__texto > .rotulo { grid-area: rot; position: relative; z-index: 2; text-align: center; }
+  .hero__titulo { grid-area: tit; position: relative; z-index: 2; margin: 12PX 0 0; font-size: clamp(36PX, 10.6vw, 46PX); text-align: center; }
+  .hero__ricardo { grid-area: foto; position: relative; inset: auto; z-index: 0; height: auto; display: block; margin-top: -6PX; }
+  .hero__ricardo picture { display: block; width: 100%; height: auto; }
+  .hero__ricardo-img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 0; -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 9%, #000 66%, transparent 98%); mask-image: linear-gradient(180deg, transparent 0, #000 9%, #000 66%, transparent 98%); }
+  .hero__sub { grid-area: sub; position: relative; z-index: 2; max-width: none; margin-top: -88PX; font-size: 16PX; text-align: center; text-shadow: 0 2PX 18PX rgb(11 11 11 / .9); }
+  .hero__acao { grid-area: acao; position: relative; z-index: 2; margin-top: 22PX; align-items: stretch; gap: 14PX; }
+  .hero__acao .botao { width: 100%; }
+  .hero__micro { justify-content: center; gap: 6PX 14PX; font-size: 12.5PX; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__fundo-img, .hero__luz, .hero__ricardo-img, .js .anim-hero-lado { animation: none; }
+}

@@ -1,0 +1,73 @@
+/* ---------------------------------------------------------------- ganhos
+   Painel cobre arredondado (ritmo do 08-inter). Grade de 4 colunas por 2 linhas: a 1ª casa é
+   o título, depois 6 cartões de foto com desfoque de movimento (referência da Henry) e um
+   cartão preto com o botão. No celular ficam de dois em dois.        */
+.ganhos { padding: 24px 0; background: var(--preto); }
+.ganhos__painel { padding: 40px; }
+.ganhos__grade { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.ganhos__intro { display: flex; flex-direction: column; justify-content: center; padding: 24px 20px 24px 28px; }
+.ganhos__intro .titulo { margin: 22px 0 20px; font-size: 44px; line-height: 1.02; }
+.ganhos__intro p { font-size: 19px; line-height: 1.45; color: rgb(255 255 255 / .86); }
+.ganhos__lista { display: contents; }
+
+.gcard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 420px;
+  padding: 24px;
+  border-radius: 26px;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--grafite);
+  box-shadow: 0 30px 60px -30px rgb(60 20 0 / .6);
+  color: #fff;
+}
+.gcard picture { position: absolute; inset: 0; z-index: -2; }
+.gcard__foto { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.gcard:hover .gcard__foto { transform: scale(1.07); }
+/* película: topo escuro pro título, base escura pro texto */
+.gcard::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgb(11 11 11 / .62), transparent 34%, transparent 52%, rgb(11 11 11 / .88)); }
+.gcard__titulo { font-family: var(--titulo); font-size: 30px; font-weight: 700; line-height: 1.02; letter-spacing: -.04em; }
+.gcard__titulo span { display: block; font-weight: 400; }
+.gcard__chip { align-self: flex-start; margin-top: 14px; min-height: 38px; font-size: 14px; }
+.gcard__chip .i { color: #fff; }
+.gcard__base { display: flex; align-items: flex-end; gap: 14px; margin-top: auto; }
+.gcard__base > div { flex: 1; }
+.gcard h3 { font-size: 19px; font-weight: 650; letter-spacing: -.02em; line-height: 1.2; }
+.gcard__base p { margin-top: 4px; font-size: 14.5px; line-height: 1.4; color: rgb(255 255 255 / .78); }
+.gcard .redondo { width: 46px; height: 46px; font-size: 18px; }
+.gcard:hover .redondo { transform: rotate(45deg); border-color: rgb(255 255 255 / .5); }
+.gcard--cta { justify-content: center; gap: 28px; padding: 36px 32px; background: var(--preto); }
+.gcard--cta::before { background: radial-gradient(80% 60% at 100% 100%, rgb(217 130 63 / .25), transparent 70%); }
+.gcard__cta-titulo { font-family: var(--titulo); font-size: 40px; font-weight: 700; line-height: 1; letter-spacing: -.045em; }
+.gcard--cta .botao { align-self: flex-start; }
+
+@media (max-width: 74.99em) {
+  .ganhos__painel { padding: 28PX; }
+  .ganhos__grade { grid-template-columns: repeat(2, 1fr); gap: 14PX; }
+  .ganhos__intro { grid-column: 1 / -1; padding: 16PX 8PX 20PX; }
+  .ganhos__intro .titulo { font-size: clamp(34PX, 5vw, 44PX); max-width: 640PX; }
+  .gcard { min-height: 380PX; }
+}
+/* celular: de dois em dois, sem rolagem de lado (regra do Felipe). Cartão compacto: título na
+   foto, só o h3 embaixo; o cartão do botão fecha a grade na linha inteira. */
+@media (max-width: 47.99em) {
+  .ganhos { padding: 8PX 0; }
+  .ganhos__painel { padding: 40PX 12PX 12PX; }
+  .ganhos__grade { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8PX; }
+  .ganhos__intro { padding: 0 8PX 20PX; }
+  .ganhos__intro .titulo { margin: 16PX 0 14PX; font-size: clamp(30PX, 8.6vw, 36PX); }
+  .ganhos__intro p { font-size: 16.5PX; }
+  .gcard { min-height: 250PX; padding: 12PX; border-radius: 18PX; }
+  .gcard__titulo { font-size: 17PX; }
+  .gcard__chip { display: none; }
+  .gcard__base { gap: 8PX; }
+  .gcard h3 { font-size: 13.5PX; }
+  .gcard__base p { display: none; }
+  .gcard .redondo { width: 32PX; height: 32PX; font-size: 14PX; }
+  .gcard--cta { grid-column: 1 / -1; min-height: 0; padding: 24PX 20PX; gap: 18PX; }
+  .gcard__cta-titulo { font-size: 28PX; }
+  .gcard--cta .botao { align-self: stretch; }
+}

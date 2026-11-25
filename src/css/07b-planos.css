@@ -1,0 +1,131 @@
+/* ---------------------------------------------------------------- planos
+   Apresentação nova do Ricardo (11/2026). Painel creme com a chave 6 / 12 meses (o JS troca
+   data-periodo na seção; tudo que muda com o período leva data-so="6" ou "12"), três cartões
+   (o Elite é o preto com aro cobre, o destaque) e a ancoragem "quanto custaria por fora" com
+   barras. Os descontos de fechamento na call ficam de fora: são da conversa, não do site.  */
+.planos { padding: 24px 0; background: var(--preto); }
+.planos__painel { padding: 96px 0 72px; }
+.planos__cabeca { max-width: 820px; margin: 0 auto 56px; text-align: center; }
+.planos__cabeca .titulo { margin: 16px 0 16px; }
+.planos .sub { max-width: 600px; margin-inline: auto; }
+
+/* o que não é do período escolhido some; o que aparece entra de baixo */
+.planos[data-periodo='6'] [data-so='12'], .planos[data-periodo='12'] [data-so='6'] { display: none !important; }
+.js .planos.trocou .plano__preco [data-so], .js .planos.trocou .ancora__economia [data-so] { animation: planos-troca .5s var(--ease) both; }
+@keyframes planos-troca { from { opacity: 0; transform: translate3d(0, 10px, 0); } }
+
+/* chave de período: pílula com a marca deslizando por trás da opção ativa */
+.periodo { position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; margin-top: 30px; padding: 5px; border-radius: 999px; background: #fff; box-shadow: inset 0 0 0 1px var(--tinta-linha), 0 14px 30px -20px rgb(80 50 20 / .4); }
+.periodo__marca { position: absolute; left: 5px; top: 5px; bottom: 5px; width: calc(50% - 5px); border-radius: 999px; background: var(--tinta); transition: transform .55s var(--anim-mola, var(--ease)); }
+.planos[data-periodo='12'] .periodo__marca { transform: translate3d(100%, 0, 0); }
+.periodo__op { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-width: 190px; min-height: 50px; padding: 0 22px; border: 0; border-radius: 999px; background: none; font: inherit; font-family: var(--titulo); font-size: 16px; font-weight: 650; color: var(--tinta); cursor: pointer; transition: color .4s var(--ease-hover); }
+.periodo__op[aria-pressed='true'] { color: #fff; }
+.periodo__op:focus-visible { outline: 2px solid var(--cobre-escuro); outline-offset: 3px; }
+.periodo__extra { padding: 3px 9px; border-radius: 999px; font-family: var(--corpo, inherit); font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--tinta); background: linear-gradient(180deg, #F0A060, var(--cobre)); }
+
+.planos__lista { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+.plano { position: relative; display: flex; flex-direction: column; padding: 36px 32px 32px; border-radius: 32px; background: #fff; box-shadow: 0 1px 0 rgb(255 255 255 / .9) inset, 0 30px 60px -36px rgb(80 50 20 / .35), 0 2px 6px rgb(80 50 20 / .05); transition: transform .6s var(--ease), box-shadow .5s var(--ease-hover); }
+.plano:hover { transform: translateY(-6px); }
+.plano__selo { align-self: flex-start; padding: 6px 14px; border-radius: 999px; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--tinta); background: linear-gradient(180deg, #F0A060, var(--cobre)); }
+.plano__selo--neutro { color: var(--cobre-escuro); background: rgb(217 130 63 / .12); }
+.plano__nome { margin-top: 22px; font-family: var(--titulo); font-size: 30px; font-weight: 650; letter-spacing: -.04em; line-height: 1.05; }
+.plano__desc { margin-top: 6px; font-size: 15.5px; color: var(--tinta-texto); }
+.plano__preco { margin-top: 26px; font-family: var(--titulo); font-size: 20px; font-weight: 600; letter-spacing: -.02em; }
+.plano__preco span { display: inline-block; }
+.plano__preco b { font-size: 52px; font-weight: 700; letter-spacing: -.055em; line-height: 1; }
+.plano__pix { margin-top: 6px; font-size: 15px; font-weight: 600; color: var(--cobre-escuro); }
+.plano__nota { margin-top: 14px; padding: 10px 14px; border-radius: 14px; font-size: 14px; line-height: 1.4; color: var(--tinta-texto); background: rgb(14 12 10 / .04); }
+.plano__inclui { display: grid; gap: 12px; margin: 24px 0 30px; padding-top: 22px; border-top: 1px solid var(--tinta-linha); font-size: 15.5px; }
+.plano__inclui li { display: flex; align-items: center; gap: 12px; }
+.plano__inclui .i { flex: none; width: 22px; height: 22px; padding: 5px; border-radius: 50%; color: #fff; background: var(--cobre-escuro); }
+.plano__inclui .nao { color: rgb(14 12 10 / .4); text-decoration: line-through; text-decoration-color: rgb(14 12 10 / .25); }
+.plano__inclui .nao .i { color: rgb(14 12 10 / .4); background: rgb(14 12 10 / .07); }
+.plano__botao { width: 100%; margin-top: auto; }
+.plano__tem { display: none; }
+
+/* Elite: preto com aro cobre e luz, o cartão que a página quer que você escolha */
+.plano--elite { color: #fff; background: radial-gradient(90% 60% at 50% 0%, rgb(217 130 63 / .28), transparent 70%), linear-gradient(180deg, #1A1511, var(--tinta)); box-shadow: inset 0 0 0 1px rgb(217 130 63 / .55), inset 0 1px 0 rgb(255 255 255 / .2), 0 40px 80px -36px rgb(120 50 10 / .7); transform: translateY(-14px); }
+.plano--elite:hover { transform: translateY(-20px); }
+.plano--elite .plano__desc { color: var(--texto); }
+.plano--elite .plano__pix { color: #F0A060; }
+.plano--elite .plano__nota { color: var(--texto); background: rgb(255 255 255 / .06); }
+.plano--elite .plano__inclui { border-color: var(--linha-2); }
+.plano--elite .plano__inclui .i { color: var(--tinta); background: linear-gradient(180deg, #F0A060, var(--cobre)); }
+
+/* ancoragem */
+.ancora { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 56px; align-items: center; margin-top: 56px; padding: 40px 48px; border-radius: 32px; background: rgb(255 255 255 / .55); box-shadow: inset 0 0 0 1px var(--tinta-linha); }
+.ancora h3 { font-family: var(--titulo); font-size: 30px; font-weight: 650; letter-spacing: -.035em; line-height: 1.08; }
+.ancora__texto p { margin-top: 12px; font-size: 15.5px; line-height: 1.5; color: var(--tinta-texto); }
+.ancora__itens { display: grid; gap: 10px; font-size: 15.5px; }
+.ancora__itens li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-bottom: 10px; border-bottom: 1px dashed rgb(14 12 10 / .15); }
+.ancora__itens small { display: block; font-size: 12.5px; color: var(--tinta-texto); }
+.ancora__itens b { font-family: var(--titulo); font-weight: 650; white-space: nowrap; }
+.ancora__barras { display: grid; gap: 12px; margin-top: 22px; }
+.ancora__barra { display: grid; grid-template-columns: 84px minmax(0, 1fr) 96px; align-items: center; gap: 14px; font-size: 14px; font-weight: 600; }
+.ancora__barra b { font-family: var(--titulo); font-size: 18px; font-weight: 700; text-align: right; white-space: nowrap; }
+.ancora__barra:first-child b { color: rgb(14 12 10 / .45); text-decoration: line-through; }
+.ancora__b { display: block; height: 14px; border-radius: 999px; width: calc(var(--p) * 100%); transform-origin: 0 50%; }
+.ancora__b--fora { background: rgb(14 12 10 / .18); }
+.ancora__b--elite { background: linear-gradient(90deg, #F0A060, var(--cobre)); }
+.js .ancora .ancora__b { transform: scaleX(0); transition: transform 1.2s var(--ease) .3s; }
+.js .ancora .ancora__b--elite { transition-delay: .6s; }
+.js .ancora.visivel .ancora__b { transform: none; }
+.ancora__economia { margin-top: 18px; font-size: 16px; }
+.ancora__economia > span { display: inline-block; padding: 8px 16px; border-radius: 999px; background: var(--tinta); color: #fff; }
+.ancora__economia b { color: #F0A060; }
+
+.planos__rodape { max-width: 640px; margin: 36px auto 0; font-size: 14px; text-align: center; color: var(--tinta-texto); }
+
+@media (max-width: 74.99em) {
+  .plano { padding: 30PX 22PX 24PX; }
+  .plano__nome { font-size: 25PX; }
+  .plano__preco b { font-size: 42PX; }
+  .plano__inclui { font-size: 14.5PX; }
+  .ancora { grid-template-columns: 1fr; gap: 26PX; padding: 32PX; }
+}
+@media (max-width: 63.99em) {
+  .planos__lista { grid-template-columns: 1fr; max-width: 480PX; margin: 0 auto; }
+  .plano--elite { order: -1; transform: none; }
+  .plano--elite:hover { transform: translateY(-6px); }
+  .ancora { max-width: 640PX; margin-inline: auto; }
+}
+/* celular: os três cartões compactos, pra caber quase numa tela só. Nome e preço na mesma
+   linha, as etiquetas Treino / Nutri / Médico no lugar da lista, nota e lista somem. */
+@media (max-width: 47.99em) {
+  .planos__painel { padding: 56PX 0 40PX; }
+  .planos__cabeca { margin-bottom: 26PX; }
+  .periodo { display: grid; width: 100%; margin-top: 22PX; }
+  .periodo__op { min-width: 0; min-height: 46PX; padding: 0 10PX; font-size: 15PX; }
+  .periodo__extra { display: none; }
+  .planos__lista { gap: 12PX; }
+  .plano { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 12PX; align-items: end; padding: 18PX 18PX 18PX; border-radius: 24PX; }
+  .plano:hover, .plano--elite:hover { transform: none; }
+  .plano__selo { grid-column: 1 / -1; grid-row: 1; justify-self: start; padding: 5PX 11PX; font-size: 10PX; }
+  .plano__nome { grid-column: 1; grid-row: 2; margin-top: 12PX; font-size: 21PX; }
+  .plano__desc { grid-column: 1; grid-row: 3; margin-top: 3PX; font-size: 13PX; align-self: start; }
+  .plano__preco { grid-column: 2; grid-row: 2; margin-top: 12PX; font-size: 13PX; text-align: right; white-space: nowrap; }
+  .plano__preco b { font-size: 28PX; }
+  .plano__pix { grid-column: 2; grid-row: 3; margin-top: 3PX; font-size: 12PX; text-align: right; align-self: start; white-space: nowrap; }
+  .plano__nota, .plano__inclui { display: none; }
+  .plano__tem { grid-column: 1 / -1; grid-row: 4; display: flex; gap: 6PX; margin-top: 14PX; }
+  .plano__tem li { flex: 1; display: flex; align-items: center; justify-content: center; gap: 5PX; min-height: 32PX; border-radius: 999PX; font-size: 12.5PX; font-weight: 600; }
+  .plano__tem .i { width: 14PX; height: 14PX; }
+  .plano__tem .sim { color: var(--cobre-escuro); background: rgb(217 130 63 / .14); }
+  .plano__tem .nao { color: rgb(14 12 10 / .38); background: rgb(14 12 10 / .05); text-decoration: line-through; }
+  .plano--elite .plano__tem .sim { color: var(--tinta); background: linear-gradient(180deg, #F0A060, var(--cobre)); }
+  .plano__botao { grid-column: 1 / -1; grid-row: 5; min-height: 46PX; margin-top: 14PX; font-size: 15PX; }
+  .ancora { margin: 28PX -8PX 0; padding: 22PX 18PX; border-radius: 24PX; gap: 18PX; }
+  .ancora h3 { font-size: 22PX; }
+  .ancora__texto p { display: none; }
+  .ancora__itens { font-size: 14PX; gap: 8PX; }
+  .ancora__barra { grid-template-columns: 64PX minmax(0, 1fr) 80PX; gap: 10PX; }
+  .ancora__barra b { font-size: 15PX; }
+  .planos__rodape { margin-top: 24PX; font-size: 13PX; }
+  .ancora__economia { font-size: 13.5PX; }
+  .ancora__economia > span { white-space: nowrap; padding: 8PX 14PX; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .periodo__marca { transition: none; }
+  .js .planos.trocou .plano__preco [data-so], .js .planos.trocou .ancora__economia [data-so] { animation: none; }
+  .js .ancora .ancora__b { transform: none; transition: none; }
+}

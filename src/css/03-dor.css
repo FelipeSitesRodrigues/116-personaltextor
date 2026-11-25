@@ -1,0 +1,68 @@
+/* ---------------------------------------------------------------- dor
+   Layout "Desde 2008" da Eletron e da Geomon: a cena do homem sentado ocupa a seção, o
+   "Pra depois." gigante fica ENTRE a cena e o recorte do homem (passa atrás da cabeça). As
+   duas imagens têm o mesmo tamanho e o mesmo object-fit, então casam pixel a pixel.        */
+.dor { position: relative; min-height: max(100svh, 780px); display: flex; overflow: clip; isolation: isolate; background: var(--preto); }
+.dor__palco { position: absolute; inset: 0; z-index: -1; }
+.dor__palco picture { position: absolute; inset: 0; }
+.dor__img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+.dor__palco picture:last-of-type { z-index: 2; }
+/* bordas no preto e base escura pra leitura dos textos */
+.dor__palco::after { content: ''; position: absolute; inset: 0; z-index: 3; pointer-events: none; background: linear-gradient(90deg, rgb(11 11 11 / .7), transparent 30%, transparent 70%, rgb(11 11 11 / .7)), linear-gradient(0deg, rgb(11 11 11 / .85), transparent 38%), linear-gradient(180deg, var(--preto), transparent 14%); }
+.dor__gigante {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 13%;
+  z-index: 1;
+  text-align: center;
+  font-family: var(--titulo);
+  font-size: 15.4vw;
+  font-weight: 700;
+  line-height: .9;
+  letter-spacing: -.06em;
+  color: var(--off);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.dor__gigante .pc { transition-duration: .9s, 1.3s; }
+.js .dor__gigante [data-palavras] .pc { transform: translate3d(0, .4em, 0); }
+
+.dor__conteudo { display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 40px 0 80px; min-height: inherit; }
+.dor__pergunta { font-size: 17px; font-weight: 500; }
+.ponto { width: 9px; height: 9px; border-radius: 50%; background: var(--cobre); box-shadow: 0 0 0 0 rgb(217 130 63 / .6); animation: ponto 2.4s var(--ease) infinite; }
+@keyframes ponto { 70%, 100% { box-shadow: 0 0 0 10px rgb(217 130 63 / 0); } }
+.dor__base { display: grid; grid-template-columns: minmax(0, 440px) 1fr minmax(0, 400px); width: 100%; align-items: end; }
+.dor__texto { grid-column: 1; }
+.dor__titulo { font-size: 48px; }
+.dor__texto p { margin: 20px 0 26px; font-size: 17.5px; color: var(--texto); }
+.dor__lista { grid-column: 3; position: relative; padding-left: 34px; }
+.dor__lista::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 1px; background: linear-gradient(var(--linha-2), rgb(255 255 255 / .05)); }
+.dor__lista li { position: relative; display: flex; flex-direction: column; gap: 4px; padding: 18px 0; }
+.dor__lista li + li { border-top: 1px solid var(--linha); }
+.dor__lista li::before { content: ''; position: absolute; left: -34px; top: 26px; width: 13px; height: 13px; border-radius: 50%; background: var(--cobre); box-shadow: 0 0 14px rgb(217 130 63 / .6); }
+.dor__lista strong { font-family: var(--titulo); font-size: 24px; font-weight: 650; letter-spacing: -.03em; }
+.dor__lista span { font-size: 16px; color: var(--texto); }
+
+@media (max-width: 63.99em) {
+  .dor__base { grid-template-columns: 1fr 1fr; gap: 40PX; }
+  .dor__lista { grid-column: 2; }
+  .dor__titulo { font-size: 40PX; }
+}
+/* celular: a cena vira um quadro no alto (4:5), o texto vem embaixo no preto */
+@media (max-width: 47.99em) {
+  .dor { display: block; min-height: 0; }
+  .dor__palco { position: relative; inset: auto; aspect-ratio: 4 / 5; z-index: 0; }
+  .dor__palco::after { background: linear-gradient(0deg, var(--preto) 2%, transparent 34%), linear-gradient(180deg, var(--preto), transparent 18%); }
+  .dor__gigante { top: 21%; font-size: 18.6vw; }
+  .dor__conteudo { position: static; padding: 8PX 0 64PX; min-height: 0; }
+  .dor__pergunta { position: absolute; top: 24PX; left: 50%; z-index: 4; translate: -50% 0; font-size: 15PX; }
+  .dor__base { grid-template-columns: 1fr; gap: 28PX; }
+  .dor__lista { grid-column: 1; }
+  .dor__titulo { font-size: clamp(30PX, 9vw, 38PX); }
+  .dor__lista strong { font-size: 20PX; }
+  .dor__lista span { font-size: 15PX; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ponto { animation: none; }
+}

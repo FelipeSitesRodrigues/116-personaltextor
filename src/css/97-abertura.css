@@ -1,0 +1,75 @@
+/* ---------------------------------------------------------------- abertura
+   Modelo da 0105 Ston e da 0104 Lume. Tela grafite com luz cobre; a logo monta como um treino:
+   o punho sobe, as anilhas entram de fora pra dentro (carregando a barra), as asas abrem,
+   PERSONAL aparece e TEXTOR sobe letra a letra. Depois a tela inteira sai pra cima com a borda
+   de baixo curva e um fio cobre, revelando o hero. Linha do tempo (~1,8 s):
+   0 a .5 punho · .15 a .65 anilhas · .3 a .95 asas · .5 a 1.15 nome · 1.2 a 1.85 saída.
+   O hero entra a partir de --abre. Só transform e opacity. Sem JS ou com movimento reduzido,
+   não aparece. As peças e as posições saem do scripts/processar-imagens.mjs.              */
+:root { --abre: 0s; }
+.abertura { display: none; }
+.js .abertura {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(55% 50% at 50% 45%, #2A1A0F, #141110 58%, var(--preto));
+  pointer-events: none;
+  animation: abertura-sai .65s cubic-bezier(.76, 0, .24, 1) 1.2s both;
+}
+/* a borda curva: meia-lua do mesmo preto presa embaixo da tela, com o fio cobre na curva */
+.js .abertura::after {
+  content: '';
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  top: calc(100% - 1PX);
+  height: 14vh;
+  border-radius: 0 0 50% 50%;
+  background: var(--preto);
+  box-shadow: 0 2PX 0 rgb(217 130 63 / .85), 0 10px 40px rgb(217 130 63 / .3);
+}
+.abertura__marca { position: relative; display: grid; place-items: center; animation: abertura-marca .4s ease-in 1.15s both; }
+.abertura__luz { position: absolute; left: 50%; top: 22%; width: 420px; height: 420px; margin: -210px 0 0 -210px; border-radius: 50%; background: radial-gradient(closest-side, rgb(217 130 63 / .34), rgb(217 130 63 / .08) 55%, transparent); animation: abertura-luz 1s var(--ease) both; }
+.abertura__logo { position: relative; width: min(360px, 68vw); }
+.abertura__p { position: absolute; height: auto; }
+
+/* o punho sobe com mola */
+[data-peca='punho'] { animation: abertura-punho .55s cubic-bezier(.34, 1.56, .64, 1) .05s both; }
+/* as anilhas entram de fora pra dentro, como quem carrega a barra */
+[data-peca='anilha-e'] { --x: -70%; animation: abertura-anilha .5s var(--ease) .16s both; }
+[data-peca='anilha-d'] { --x: 70%; animation: abertura-anilha .5s var(--ease) .16s both; }
+/* as asas abrem a partir do corpo (lado de dentro) */
+[data-peca='asa-e'] { --r: 28deg; transform-origin: 100% 60%; animation: abertura-asa .65s cubic-bezier(.34, 1.3, .64, 1) .3s both; }
+[data-peca='asa-d'] { --r: -28deg; transform-origin: 0 60%; animation: abertura-asa .65s cubic-bezier(.34, 1.3, .64, 1) .3s both; }
+[data-peca='personal'] { animation: abertura-nome .5s var(--ease) .5s both; }
+[data-peca='letra'] { animation: abertura-letra .55s var(--ease) calc(.56s + var(--l) * 45ms) both; }
+
+@keyframes abertura-luz { from { opacity: 0; transform: scale(.5); } }
+@keyframes abertura-punho { from { opacity: 0; transform: translate3d(0, 55%, 0) scale(.8); } }
+@keyframes abertura-anilha { from { opacity: 0; transform: translate3d(var(--x), 0, 0); } }
+@keyframes abertura-asa { from { opacity: 0; transform: rotate(var(--r)) scale(.45); } }
+@keyframes abertura-nome { from { opacity: 0; transform: translate3d(0, 80%, 0); } }
+@keyframes abertura-letra { from { opacity: 0; transform: translate3d(0, 50%, 0); } }
+@keyframes abertura-marca { to { opacity: 0; transform: translate3d(0, -24px, 0); } }
+@keyframes abertura-sai { to { transform: translate3d(0, calc(-100% - 15vh), 0); } }
+.js .abertura.acabou { display: none; }
+/* até as peças decodificarem (script do parcial, no máximo 0,6 s), a abertura e o hero ficam
+   parados no 1º quadro (só eles: pausar a página toda recalcula 1.200 elementos): abertura e hero continuam em sincronia */
+.abre-espera .abertura, .abre-espera .abertura *, .abre-espera .abertura::after, .abre-espera .hero * { animation-play-state: paused !important; }
+
+/* o hero e o header esperam a tela sair (a entrada deles soma o --abre). A foto do Ricardo
+   começa a subir enquanto a tela sai, o que emenda a abertura no hero. */
+.js { --abre: 1.3s; }
+@media (prefers-reduced-motion: no-preference) {
+  .js .hero__fundo-img { animation-delay: .9s; }
+  .js .hero__luz { animation-delay: 1.3s; }
+  .js .hero__ricardo-img { animation-delay: 1.05s; }
+  .js .anim-hero-lado { animation-delay: calc(var(--atraso, 1s) + var(--abre)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .abertura { display: none; }
+  .js { --abre: 0s; }
+}
