@@ -74,3 +74,27 @@
   .dep { transition: none; }
   .depo__barra { display: none; }
 }
+
+/* ---------------------------------------------------------------- prints reais (WhatsApp dos alunos)
+   Mural em colunas, cada print na altura natural (não corta conversa). 3 colunas no computador,
+   2 no celular: nada de rolagem lateral.                                                    */
+.prints { margin-top: 8px; }
+.prints__rotulo { margin-bottom: 28px; text-align: center; font-size: 15px; letter-spacing: .02em; color: var(--texto); }
+.prints__rotulo span { font-family: var(--titulo); font-weight: 650; letter-spacing: .14em; text-transform: uppercase; color: var(--cobre); margin-right: 6px; }
+.prints__mural { max-width: 1080px; margin: 0 auto; columns: 3; column-gap: 20px; }
+.print { break-inside: avoid; margin-bottom: 20px; }
+.print figure { padding: 8px 8px 0; border-radius: 22px; border: 1px solid rgb(217 130 63 / .22); background: linear-gradient(180deg, rgb(40 32 24 / .7), rgb(20 16 12 / .7)); }
+.print img { display: block; width: 100%; height: auto; border-radius: 15px; }
+.print figcaption { display: flex; align-items: center; gap: 10px; padding: 12px 6px 13px; font-family: var(--titulo); font-size: 14px; font-weight: 600; line-height: 1.3; color: var(--branco); }
+.print figcaption::before { content: ''; flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--cobre); box-shadow: 0 0 0 3px rgb(217 130 63 / .2); }
+.feedbacks__fim { margin-top: 28px; }
+@media (max-width: 47.99em) {
+  .prints__rotulo { margin-bottom: 18PX; font-size: 13.5PX; }
+  .prints__rotulo span { display: block; margin: 0 0 4PX; }
+  .prints__mural { columns: 2; column-gap: 8PX; margin: 0 -8PX; }
+  .print { margin-bottom: 8PX; }
+  .print figure { padding: 5PX 5PX 0; border-radius: 16PX; }
+  .print img { border-radius: 11PX; }
+  .print figcaption { gap: 7PX; padding: 9PX 4PX 10PX; font-size: 11.5PX; }
+  .print figcaption::before { width: 5PX; height: 5PX; }
+}

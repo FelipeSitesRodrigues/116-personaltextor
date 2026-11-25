@@ -157,6 +157,22 @@ if (quer('parede')) {
   for (const [nome, hora, foco] of PAREDE) await variantes(`parede-${nome}`, await proporcao(foto(hora), 3 / 4, foco), [240, 360], { q: 48 })
 }
 
+// ---------------------------------------------------------------- prints reais dos feedbacks
+// Recursos Site/DEPOIMENTOS RICARDO (11/2026): 4 posts de acompanhamento + 2 mensagens de aluno.
+// Corta só a conversa (sem o título do post); a parede usa a altura natural de cada um.
+if (quer('prints')) {
+  const DEP = (h) => `${REC}/DEPOIMENTOS RICARDO/WhatsApp Image 2026-11-25 at ${h}.jpeg`
+  const PRINTS = [
+    ['constancia', '19.24.00 (1)', { left: 128, top: 12, width: 950, height: 1540 }],
+    ['cotovelos', '19.23.59', { left: 282, top: 358, width: 506, height: 874 }],
+    ['peso', '19.24.31', { left: 22, top: 22, width: 880, height: 1556 }],
+    ['bulgaro', '19.24.00', { left: 150, top: 322, width: 642, height: 970 }],
+    ['coluna', '19.23.59 (1)', { left: 130, top: 194, width: 684, height: 1108 }],
+    ['audio', '19.23.59 (2)', { left: 130, top: 276, width: 672, height: 1002 }],
+  ]
+  for (const [nome, h, r] of PRINTS) await variantes(`print-${nome}`, await corte(DEP(h), r), [300, 480], { q: 66 })
+}
+
 // ---------------------------------------------------------------- avatares dos depoimentos
 if (quer('avatares')) {
   await variantes('avatar-luiz', await corte(foto('12.32.15'), { left: 400, top: 460, width: 150, height: 150 }), [96], { q: 62 })

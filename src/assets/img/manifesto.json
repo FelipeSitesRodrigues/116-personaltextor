@@ -898,5 +898,125 @@
   "w": 96,
   "h": 110,
   "kb": 3
+ },
+ "print-constancia-300.avif": {
+  "w": 300,
+  "h": 486,
+  "kb": 21
+ },
+ "print-constancia-300.webp": {
+  "w": 300,
+  "h": 486,
+  "kb": 18
+ },
+ "print-constancia-480.avif": {
+  "w": 480,
+  "h": 778,
+  "kb": 42
+ },
+ "print-constancia-480.webp": {
+  "w": 480,
+  "h": 778,
+  "kb": 37
+ },
+ "print-cotovelos-300.avif": {
+  "w": 300,
+  "h": 518,
+  "kb": 18
+ },
+ "print-cotovelos-300.webp": {
+  "w": 300,
+  "h": 518,
+  "kb": 16
+ },
+ "print-cotovelos-480.avif": {
+  "w": 480,
+  "h": 829,
+  "kb": 31
+ },
+ "print-cotovelos-480.webp": {
+  "w": 480,
+  "h": 829,
+  "kb": 27
+ },
+ "print-peso-300.avif": {
+  "w": 300,
+  "h": 530,
+  "kb": 25
+ },
+ "print-peso-300.webp": {
+  "w": 300,
+  "h": 530,
+  "kb": 27
+ },
+ "print-peso-480.avif": {
+  "w": 480,
+  "h": 849,
+  "kb": 45
+ },
+ "print-peso-480.webp": {
+  "w": 480,
+  "h": 849,
+  "kb": 47
+ },
+ "print-bulgaro-300.avif": {
+  "w": 300,
+  "h": 453,
+  "kb": 15
+ },
+ "print-bulgaro-300.webp": {
+  "w": 300,
+  "h": 453,
+  "kb": 13
+ },
+ "print-bulgaro-480.avif": {
+  "w": 480,
+  "h": 725,
+  "kb": 25
+ },
+ "print-bulgaro-480.webp": {
+  "w": 480,
+  "h": 725,
+  "kb": 22
+ },
+ "print-coluna-300.avif": {
+  "w": 300,
+  "h": 486,
+  "kb": 17
+ },
+ "print-coluna-300.webp": {
+  "w": 300,
+  "h": 486,
+  "kb": 15
+ },
+ "print-coluna-480.avif": {
+  "w": 480,
+  "h": 778,
+  "kb": 30
+ },
+ "print-coluna-480.webp": {
+  "w": 480,
+  "h": 778,
+  "kb": 26
+ },
+ "print-audio-300.avif": {
+  "w": 300,
+  "h": 447,
+  "kb": 13
+ },
+ "print-audio-300.webp": {
+  "w": 300,
+  "h": 447,
+  "kb": 10
+ },
+ "print-audio-480.avif": {
+  "w": 480,
+  "h": 716,
+  "kb": 23
+ },
+ "print-audio-480.webp": {
+  "w": 480,
+  "h": 716,
+  "kb": 17
  }
 }
