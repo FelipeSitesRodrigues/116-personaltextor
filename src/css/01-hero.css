@@ -28,7 +28,9 @@
 
 .hero__grade { display: grid; grid-template-columns: minmax(0, 500px) 1fr minmax(0, 390px); align-items: center; padding: 130px 0 72px; min-height: max(100svh, 760px); }
 .hero__texto { grid-column: 1; }
-.hero__titulo { margin: 22px 0 26px; font-size: 74px; line-height: .96; letter-spacing: -.05em; }
+.hero__titulo { margin: 22px 0 26px; font-size: 60px; line-height: .98; letter-spacing: -.05em; }
+/* duas linhas sempre ("Você cuida de tudo." / "Menos de você."): a quebra é só o <br> */
+@media (min-width: 48em) { .hero__titulo { white-space: nowrap; } }
 .hero__sub { max-width: 430px; font-size: 19px; line-height: 1.55; color: var(--texto); }
 .hero__acao { margin-top: 36px; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
 /* itens com um ponto cobre na frente de cada um: quebrando a linha, nenhum ponto fica solto */
@@ -55,7 +57,7 @@
   .hero__grade { grid-template-columns: minmax(0, 1fr); }
   .hero__ricardo { left: 42%; height: 84%; }
   .hero__texto { max-width: 480PX; }
-  .hero__titulo { font-size: clamp(50PX, 6vw, 64PX); }
+  .hero__titulo { font-size: clamp(40PX, 5vw, 56PX); }
 }
 /* celular (pedido do Felipe, 2026-11-25): headline em cima da cabeça, a foto do Ricardo no
    meio e subheadline e botões embaixo do corpo. A grade e o texto viram "display: contents"
