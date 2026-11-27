@@ -1,4 +1,4 @@
-<section class="planos cv" id="planos" aria-labelledby="planos-titulo" style="--cvh:1500px" data-planos data-periodo="6">
+<section class="planos cv" id="planos" aria-labelledby="planos-titulo" style="--cvh:1500px" data-planos>
   <div class="painel planos__painel">
     <!-- cores fortes e desfocadas atrás do vidro (paradas: vidro sobre cor lisa não aparece) -->
     <div class="planos__cores" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
@@ -6,12 +6,7 @@
       <header class="planos__cabeca">
         <span class="rotulo" data-revela>Investimento</span>
         <h2 class="titulo" id="planos-titulo" data-palavras data-revela="palavras">Escolha até onde <span class="cobre">você quer ir.</span></h2>
-        <p class="sub" data-revela style="--atraso:.2s">Três formatos, do treino ao protocolo completo com nutricionista e médico. Quanto maior o ciclo, menor a parcela.</p>
-        <div class="periodo" role="group" aria-label="Duração do plano" data-revela style="--atraso:.3s">
-          <span class="periodo__marca" aria-hidden="true"></span>
-          <button type="button" class="periodo__op" data-periodo-op="6" aria-pressed="true">6 meses</button>
-          <button type="button" class="periodo__op" data-periodo-op="12" aria-pressed="false">12 meses <span class="periodo__extra">melhor custo</span></button>
-        </div>
+        <p class="sub" data-revela style="--atraso:.2s">Três formatos, do treino ao protocolo completo com nutricionista e médico, em ciclos de 6 ou 12 meses. Os valores eu te passo direto no WhatsApp.</p>
       </header>
 
       <ul class="planos__lista">
@@ -19,9 +14,7 @@
           <span class="plano__selo plano__selo--neutro">Base</span>
           <h3 class="plano__nome">Apenas Treino</h3>
           <p class="plano__desc">Consultoria de treinamento</p>
-          <p class="plano__preco"><span data-so="6">6x <b>R$ 280</b></span><span data-so="12">12x <b>R$ 220</b></span></p>
-          <p class="plano__pix"><span data-so="6">ou R$ 1.500 no PIX</span><span data-so="12">ou R$ 2.200 no PIX</span></p>
-          <p class="plano__nota"><span data-so="6">6 meses de treino individualizado.</span><span data-so="12">12 meses de periodização completa.</span></p>
+          <p class="plano__nota">Pra quem quer o treino certo, com correção e ajuste de perto.</p>
           <ul class="plano__tem" aria-label="O que inclui"><li class="sim"><i data-i="check" data-w="bold"></i>Treino<span class="sr-only">: incluso</span></li><li class="nao"><i data-i="x" data-w="bold"></i>Nutri<span class="sr-only">: não incluso</span></li><li class="nao"><i data-i="x" data-w="bold"></i>Médico<span class="sr-only">: não incluso</span></li></ul>
           <ul class="plano__inclui">
             <li><i data-i="check" data-w="bold"></i>Treino individualizado no app</li>
@@ -30,18 +23,14 @@
             <li class="nao"><i data-i="x" data-w="bold"></i>Nutricionista</li>
             <li class="nao"><i data-i="x" data-w="bold"></i>Médico e check-up</li>
           </ul>
-          <a class="botao botao--escuro plano__botao" data-so="6" href="{{wa:Olá, Ricardo! Vim pelo site e quero o plano Apenas Treino de 6 meses.}}" target="_blank" rel="noopener">Quero esse plano<i data-i="arrow-right" data-w="bold" class="i--seta"></i></a>
-          <a class="botao botao--escuro plano__botao" data-so="12" href="{{wa:Olá, Ricardo! Vim pelo site e quero o plano Apenas Treino de 12 meses.}}" target="_blank" rel="noopener">Quero esse plano<i data-i="arrow-right" data-w="bold" class="i--seta"></i></a>
+          <a class="botao botao--escuro plano__botao" href="{{wa:Olá, Ricardo! Vim pelo site e quero o plano Apenas Treino.}}" target="_blank" rel="noopener">Quero esse plano<i data-i="arrow-right" data-w="bold" class="i--seta"></i></a>
         </li>
 
         <li class="plano plano--pro" data-revela="grade" style="--i:1">
-          <span class="plano__selo" data-so="6">Mais indicado</span>
-          <span class="plano__selo plano__selo--neutro" data-so="12">Treino + nutrição</span>
+          <span class="plano__selo">Mais indicado</span>
           <h3 class="plano__nome">Pro Performance</h3>
           <p class="plano__desc">Treino + nutricionista</p>
-          <p class="plano__preco"><span data-so="6">6x <b>R$ 375</b></span><span data-so="12">12x <b>R$ 280</b></span></p>
-          <p class="plano__pix"><span data-so="6">ou R$ 2.000 no PIX</span><span data-so="12">ou R$ 2.800 no PIX</span></p>
-          <p class="plano__nota"><span data-so="6">Só +R$ 500 pela nutrição, no PIX.</span><span data-so="12">Só +R$ 50 por mês pela nutrição.</span></p>
+          <p class="plano__nota">Treino e alimentação andando juntos, na mesma direção.</p>
           <ul class="plano__tem" aria-label="O que inclui"><li class="sim"><i data-i="check" data-w="bold"></i>Treino<span class="sr-only">: incluso</span></li><li class="sim"><i data-i="check" data-w="bold"></i>Nutri<span class="sr-only">: incluso</span></li><li class="nao"><i data-i="x" data-w="bold"></i>Médico<span class="sr-only">: não incluso</span></li></ul>
           <ul class="plano__inclui">
             <li><i data-i="check" data-w="bold"></i>Treino individualizado no app</li>
@@ -50,18 +39,14 @@
             <li><i data-i="check" data-w="bold"></i>Nutricionista com plano alimentar</li>
             <li class="nao"><i data-i="x" data-w="bold"></i>Médico e check-up</li>
           </ul>
-          <a class="botao botao--escuro plano__botao" data-so="6" href="{{wa:Olá, Ricardo! Vim pelo site e quero o plano Pro Performance (treino + nutricionista) de 6 meses.}}" target="_blank" rel="noopener">Quero esse plano<i data-i="arrow-right" data-w="bold" class="i--seta"></i></a>
-          <a class="botao botao--escuro plano__botao" data-so="12" href="{{wa:Olá, Ricardo! Vim pelo site e quero o plano Pro Performance (treino + nutricionista) de 12 meses.}}" target="_blank" rel="noopener">Quero esse plano<i data-i="arrow-right" data-w="bold" class="i--seta"></i></a>
+          <a class="botao botao--escuro plano__botao" href="{{wa:Olá, Ricardo! Vim pelo site e quero o plano Pro Performance (treino + nutricionista).}}" target="_blank" rel="noopener">Quero esse plano<i data-i="arrow-right" data-w="bold" class="i--seta"></i></a>
         </li>
 
         <li class="plano plano--elite" data-revela="grade" style="--i:2">
-          <span class="plano__selo plano__selo--cobre" data-so="6">Protocolo 360º</span>
-          <span class="plano__selo plano__selo--cobre" data-so="12">Protocolo completo 360º</span>
+          <span class="plano__selo plano__selo--cobre">Protocolo 360º</span>
           <h3 class="plano__nome">Elite Multidisciplinar</h3>
           <p class="plano__desc">Treino + nutrição + médico</p>
-          <p class="plano__preco"><span data-so="6">6x <b>R$ 415</b></span><span data-so="12">12x <b>R$ 330</b></span></p>
-          <p class="plano__pix"><span data-so="6">ou R$ 2.200 no PIX</span><span data-so="12">ou R$ 3.300 no PIX</span></p>
-          <p class="plano__nota"><span data-so="6">Economia de R$ 1.200 contra contratar separado.</span><span data-so="12">Economia de R$ 2.100 contra contratar separado.</span></p>
+          <p class="plano__nota">Os três especialistas olhando pro mesmo objetivo.</p>
           <ul class="plano__tem" aria-label="O que inclui"><li class="sim"><i data-i="check" data-w="bold"></i>Treino<span class="sr-only">: incluso</span></li><li class="sim"><i data-i="check" data-w="bold"></i>Nutri<span class="sr-only">: incluso</span></li><li class="sim"><i data-i="check" data-w="bold"></i>Médico<span class="sr-only">: incluso</span></li></ul>
           <ul class="plano__inclui">
             <li><i data-i="check" data-w="bold"></i>Treino individualizado no app</li>
@@ -70,32 +55,10 @@
             <li><i data-i="check" data-w="bold"></i>Nutricionista com plano alimentar</li>
             <li><i data-i="check" data-w="bold"></i>Médico, check-up e exames</li>
           </ul>
-          <a class="botao botao--cobre plano__botao" data-so="6" data-brilho href="{{wa:Olá, Ricardo! Vim pelo site e quero o plano Elite Multidisciplinar (treino + nutrição + médico) de 6 meses.}}" target="_blank" rel="noopener"><span class="brilho" aria-hidden="true"><span class="brilho__volta"><span class="brilho__ponto"></span></span></span><span class="brilho-fio" aria-hidden="true"><span class="brilho__ponto"></span></span>Quero o Elite<i data-i="arrow-right" data-w="bold" class="i--seta"></i></a>
-          <a class="botao botao--cobre plano__botao" data-so="12" data-brilho href="{{wa:Olá, Ricardo! Vim pelo site e quero o plano Elite Multidisciplinar (treino + nutrição + médico) de 12 meses.}}" target="_blank" rel="noopener"><span class="brilho" aria-hidden="true"><span class="brilho__volta"><span class="brilho__ponto"></span></span></span><span class="brilho-fio" aria-hidden="true"><span class="brilho__ponto"></span></span>Quero o Elite<i data-i="arrow-right" data-w="bold" class="i--seta"></i></a>
+          <a class="botao botao--cobre plano__botao" data-brilho href="{{wa:Olá, Ricardo! Vim pelo site e quero o plano Elite Multidisciplinar (treino + nutrição + médico).}}" target="_blank" rel="noopener"><span class="brilho" aria-hidden="true"><span class="brilho__volta"><span class="brilho__ponto"></span></span></span><span class="brilho-fio" aria-hidden="true"><span class="brilho__ponto"></span></span>Quero o Elite<i data-i="arrow-right" data-w="bold" class="i--seta"></i></a>
         </li>
       </ul>
-
-      <!-- ancoragem: quanto custaria contratar os três por fora (números da apresentação) -->
-      <div class="ancora" data-revela>
-        <div class="ancora__texto">
-          <h3>Quanto custaria contratar tudo por fora?</h3>
-          <p>Média de mercado pra ter os mesmos três especialistas, cada um no seu consultório.</p>
-        </div>
-        <div class="ancora__conta">
-          <ul class="ancora__itens">
-            <li><span>Consultoria de treino</span><b><span data-so="6">R$ 1.500</span><span data-so="12">R$ 2.200</span></b></li>
-            <li><span>Nutricionista <small><span data-so="6">2 consultas de R$ 350</span><span data-so="12">4 consultas de R$ 350</span></small></span><b><span data-so="6">R$ 700</span><span data-so="12">R$ 1.400</span></b></li>
-            <li><span>Médico especialista <small><span data-so="6">2 consultas de R$ 600</span><span data-so="12">3 consultas de R$ 600</span></small></span><b><span data-so="6">R$ 1.200</span><span data-so="12">R$ 1.800</span></b></li>
-          </ul>
-          <div class="ancora__barras" aria-hidden="true">
-            <div class="ancora__barra"><span>Separado</span><i class="ancora__b ancora__b--fora" style="--p:1"></i><b><span data-so="6">R$ 3.400</span><span data-so="12">R$ 5.400</span></b></div>
-            <div class="ancora__barra"><span>Elite</span><i class="ancora__b ancora__b--elite" style="--p:.647" data-so="6"></i><i class="ancora__b ancora__b--elite" style="--p:.611" data-so="12"></i><b><span data-so="6">R$ 2.200</span><span data-so="12">R$ 3.300</span></b></div>
-          </div>
-          <p class="ancora__economia"><span data-so="6">Economia de <b>R$ 1.200</b> em 6 meses</span><span data-so="12">Economia de <b>R$ 2.100</b> em 12 meses</span></p>
-        </div>
-      </div>
-
-      <p class="planos__rodape" data-revela>Valores à vista no PIX ou parcelados. Na conversa comigo pelo WhatsApp eu explico cada plano e te ajudo a escolher.</p>
+      <p class="planos__rodape" data-revela>Planos de 6 ou 12 meses, à vista no PIX ou parcelados. Valores e condições eu te passo na conversa pelo WhatsApp e te ajudo a escolher.</p>
     </div>
   </div>
 </section>
