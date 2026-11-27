@@ -4,7 +4,7 @@
  *
  * Origem (../0116 - Ricardo Consultoria/Recursos Site):
  *  - limpas/: as 5 imagens sem texto do ChatGPT (hero, dor, ganhos 1 a 3 e 4 a 6, como funciona)
- *  - hero-vertical-chatgpt.png: o Ricardo de braços cruzados (fundo do hero no celular)
+ *  - hero-vertical-rosto-real.png: o Ricardo de braços cruzados, editado da foto real (hero)
  *  - FOTOS RICARDO/: posts e fotos que ele mandou (antes e depois, sobre, parede dos feedbacks)
  *  - logo-nova-branca.png: logo branca no preto, vira transparente e ganha o cobre aqui
  * insumos/ricardo-recorte.png e insumos/dor-pessoa.png: recortes por BiRefNet lite (o homem
@@ -76,7 +76,9 @@ if (quer('hero')) {
   // o Ricardo recortado: desce até o pé da imagem (a camiseta some no preto do degradê)
   await variantes('ricardo', await limparAlfa('insumos/ricardo-recorte.png'), [420, 640, 900], { q: 60, alfa: true })
   // celular: a foto vertical inteira de fundo da seção (memória hero-mobile-foto-de-fundo)
-  await variantes('hero-cel', await sharp(`${REC}/hero-vertical-chatgpt.png`).toBuffer(), [480, 720, 941], { q: 50 })
+  // foto nova (11/2026, editada da foto real dele com o rosto fiel): a 1ª deu cara de IA. O
+  // celular mostra 4:5 a partir do topo, então o corte começa um pouco acima da cabeça
+  await variantes('hero-cel', await corte(`${REC}/hero-vertical-rosto-real.png`, { left: 0, top: 330, width: 941, height: 1176 }), [480, 720, 941], { q: 50 })
 }
 
 // ---------------------------------------------------------------- dor: cena e o homem por cima
