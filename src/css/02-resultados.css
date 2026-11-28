@@ -117,6 +117,96 @@
   .casal__txt { font-size: 13PX; padding: 0 6PX; }
   .resultados__fim .botao { width: 100%; }
 }
+/* ---------------------------------------------------------------- antes e depois em tela cheia
+   O par de fotos vira botão (lupa no canto) e abre o <dialog> escuro com as duas fotos grandes,
+   setas e contador. O tamanho de cada foto é calculado no JS (02-resultados.js).              */
+.ad__fotos[role='button'] { position: relative; cursor: zoom-in; border-radius: 18px; }
+.ad__fotos[role='button']:focus-visible { outline: 2px solid var(--cobre); outline-offset: 4px; }
+.ad__ampliar {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 16px;
+  color: #fff;
+  background: rgb(14 12 10 / .55);
+  border: 1px solid rgb(255 255 255 / .25);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+  transition: transform .4s var(--ease);
+}
+.ad__fotos:hover .ad__ampliar { transform: scale(1.12); }
+html.fc-aberto { overflow: hidden; }
+.fc {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #fff;
+  background: #0D0A08;
+  overscroll-behavior: contain;
+}
+.fc[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; animation: fc-entra .3s var(--ease); }
+.fc::backdrop { background: transparent; }
+@keyframes fc-entra { from { opacity: 0; } }
+.fc[open] .fc__fotos { animation: fc-fotos .45s var(--ease); }
+@keyframes fc-fotos { from { opacity: 0; transform: scale(.96); } }
+.fc__topo { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; max-width: 1100px; margin: 0 auto; padding: max(18px, env(safe-area-inset-top)) 24px 16px; }
+.fc__quem { font-size: 15px; color: rgb(255 255 255 / .7); }
+.fc__num { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-top: 4px; }
+.fc .ad__numeros { margin: 0; font-size: 30px; color: #fff; }
+.fc .ad__numeros .i { font-size: 20px; }
+.fc .ad__numeros small { font-size: 15px; }
+.fc .ad__selo { margin: 0; padding: 5px 14px; font-size: 15px; transform: none; opacity: 1; }
+.fc__fechar, .fc__seta {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 22px;
+  color: #fff;
+  background: rgb(255 255 255 / .1);
+  border: 1px solid rgb(255 255 255 / .22);
+  cursor: pointer;
+  transition: background .3s var(--ease-hover);
+}
+.fc__fechar:hover, .fc__seta:hover { background: rgb(255 255 255 / .2); }
+.fc__fechar:focus-visible, .fc__seta:focus-visible { outline: 2px solid var(--cobre); outline-offset: 3px; }
+.fc__fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; max-width: 1100px; min-height: 0; margin: 0 auto; padding: 0 24px; touch-action: pan-y; }
+.fc__foto { display: flex; align-items: center; justify-content: flex-end; min-width: 0; min-height: 0; }
+.fc__foto + .fc__foto { justify-content: flex-start; }
+.fc__quadro { position: relative; overflow: hidden; border-radius: 16px; background: #2a211b; }
+.fc__quadro picture { display: block; width: 100%; height: 100%; }
+.fc__quadro img { display: block; width: 100%; height: 100%; object-fit: cover; -webkit-user-drag: none; user-select: none; }
+.fc__quadro figcaption { position: absolute; top: 10px; left: 10px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: rgb(14 12 10 / .55); border: 1px solid rgb(255 255 255 / .2); }
+.fc__base { display: flex; align-items: center; justify-content: center; gap: 22px; padding: 16px 24px max(18px, env(safe-area-inset-bottom)); }
+.fc__conta { min-width: 54px; font-size: 14px; font-weight: 600; text-align: center; color: rgb(255 255 255 / .7); font-variant-numeric: tabular-nums; }
+@media (max-width: 47.99em) {
+  .ad__ampliar { right: 5PX; bottom: 5PX; width: 24PX; height: 24PX; font-size: 12PX; }
+  .fc__topo { padding: max(14PX, env(safe-area-inset-top)) 16PX 14PX; }
+  .fc__quem { font-size: 13.5PX; }
+  .fc .ad__numeros { font-size: 24PX; }
+  .fc .ad__numeros .i { font-size: 16PX; }
+  .fc .ad__selo { font-size: 13PX; padding: 4PX 11PX; }
+  .fc__fotos { gap: 6PX; padding: 0 10PX; }
+  .fc__quadro { border-radius: 12PX; }
+  .fc__quadro figcaption { top: 6PX; left: 6PX; padding: 3PX 8PX; font-size: 10PX; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fc[open], .fc[open] .fc__fotos { animation: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   .js .ad .ad__selo { transform: none; opacity: 1; transition: none; }
   .js .visivel > .prova__pulo, .js .visivel.prova__pulo { animation: none; }

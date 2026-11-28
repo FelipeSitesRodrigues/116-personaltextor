@@ -18,6 +18,7 @@
           <div class="ad__fotos">
             <figure><img data-img="ad-luciano-antes" sizes="(max-width: 63.99em) 36vw, 216px" alt="Luciano antes da consultoria" loading="lazy"><figcaption>Antes</figcaption></figure>
             <figure><img data-img="ad-luciano-depois" sizes="(max-width: 63.99em) 36vw, 216px" alt="Luciano depois de 6 meses de consultoria" loading="lazy"><figcaption>Depois</figcaption></figure>
+            <span class="ad__ampliar" aria-hidden="true"><i data-i="arrows-out-simple" data-w="bold"></i></span>
           </div>
           <p class="ad__quem">Luciano, 39 anos <span>·</span> 6 meses</p>
           <p class="ad__numeros">103,6 <i data-i="arrow-right" data-w="bold"></i> 93,4 <small>kg</small></p>
@@ -28,6 +29,7 @@
           <div class="ad__fotos">
             <figure><img data-img="ad-lucas-antes" sizes="(max-width: 63.99em) 36vw, 216px" alt="Lucas antes da consultoria" loading="lazy"><figcaption>Antes</figcaption></figure>
             <figure><img data-img="ad-lucas-depois" sizes="(max-width: 63.99em) 36vw, 216px" alt="Lucas depois de 3 meses de consultoria" loading="lazy"><figcaption>Depois</figcaption></figure>
+            <span class="ad__ampliar" aria-hidden="true"><i data-i="arrows-out-simple" data-w="bold"></i></span>
           </div>
           <p class="ad__quem">Lucas, 41 anos <span>·</span> 3 meses</p>
           <p class="ad__numeros">30,9 <i data-i="arrow-right" data-w="bold"></i> 34,1 <small>kg de músculo</small></p>
@@ -38,6 +40,7 @@
           <div class="ad__fotos">
             <figure><img data-img="ad-leonardo-antes" sizes="(max-width: 63.99em) 36vw, 216px" alt="Leonardo antes da consultoria" loading="lazy"><figcaption>Antes</figcaption></figure>
             <figure><img data-img="ad-leonardo-depois" sizes="(max-width: 63.99em) 36vw, 216px" alt="Leonardo depois de 12 meses de consultoria" loading="lazy"><figcaption>Depois</figcaption></figure>
+            <span class="ad__ampliar" aria-hidden="true"><i data-i="arrows-out-simple" data-w="bold"></i></span>
           </div>
           <p class="ad__quem">Leonardo, 43 anos <span>·</span> 12 meses</p>
           <p class="ad__numeros">70 <i data-i="arrow-right" data-w="bold"></i> 82 <small>kg</small></p>
@@ -48,6 +51,7 @@
           <div class="ad__fotos">
             <figure><img data-img="ad-jefferson-antes" sizes="(max-width: 63.99em) 36vw, 216px" alt="Jefferson antes da consultoria, com 65 kg" loading="lazy"><figcaption>Antes</figcaption></figure>
             <figure><img data-img="ad-jefferson-depois" sizes="(max-width: 63.99em) 36vw, 216px" alt="Jefferson depois de 6 meses, com 76 kg" loading="lazy"><figcaption>Depois</figcaption></figure>
+            <span class="ad__ampliar" aria-hidden="true"><i data-i="arrows-out-simple" data-w="bold"></i></span>
           </div>
           <p class="ad__quem">Jefferson <span>·</span> 6 meses</p>
           <p class="ad__numeros">65 <i data-i="arrow-right" data-w="bold"></i> 76 <small>kg</small></p>
@@ -57,17 +61,19 @@
         <li class="ad ad--casal" data-revela="grade" style="--i:1">
           <div class="casal">
             <div class="casal__um">
-              <div class="ad__fotos">
+              <div class="ad__fotos" data-quem="Ele · transformação em casal, 12 meses">
             <figure><img data-img="ad-ele-antes" sizes="(max-width: 63.99em) 36vw, 216px" alt="Ele antes, com 116 kg" loading="lazy"><figcaption>Antes</figcaption></figure>
             <figure><img data-img="ad-ele-depois" sizes="(max-width: 63.99em) 36vw, 216px" alt="Ele depois de 12 meses, com 85 kg" loading="lazy"><figcaption>Depois</figcaption></figure>
+            <span class="ad__ampliar" aria-hidden="true"><i data-i="arrows-out-simple" data-w="bold"></i></span>
           </div>
               <p class="ad__numeros">116 <i data-i="arrow-right" data-w="bold"></i> 85 <small>kg</small></p>
               <span class="ad__selo">-31 kg</span>
             </div>
             <div class="casal__um">
-              <div class="ad__fotos">
+              <div class="ad__fotos" data-quem="Ela · transformação em casal, 12 meses">
             <figure><img data-img="ad-ela-antes" sizes="(max-width: 63.99em) 36vw, 216px" alt="Ela antes, com 77 kg" loading="lazy"><figcaption>Antes</figcaption></figure>
             <figure><img data-img="ad-ela-depois" sizes="(max-width: 63.99em) 36vw, 216px" alt="Ela depois de 12 meses, com 60 kg" loading="lazy"><figcaption>Depois</figcaption></figure>
+            <span class="ad__ampliar" aria-hidden="true"><i data-i="arrows-out-simple" data-w="bold"></i></span>
           </div>
               <p class="ad__numeros">77 <i data-i="arrow-right" data-w="bold"></i> 60 <small>kg</small></p>
               <span class="ad__selo">-17 kg</span>
@@ -84,4 +90,17 @@
       </div>
     </div>
   </div>
+
+  <dialog class="fc" data-fc aria-label="Antes e depois em tela cheia">
+    <div class="fc__topo">
+      <div class="fc__info"><p class="fc__quem" data-fc-quem></p><div class="fc__num" data-fc-num></div></div>
+      <button class="fc__fechar" type="button" data-fc-fechar aria-label="Fechar e voltar pro site"><i data-i="x" data-w="bold"></i></button>
+    </div>
+    <div class="fc__fotos" data-fc-fotos></div>
+    <div class="fc__base">
+      <button class="fc__seta" type="button" data-fc-ant aria-label="Aluno anterior"><i data-i="caret-left" data-w="bold"></i></button>
+      <span class="fc__conta" data-fc-conta></span>
+      <button class="fc__seta" type="button" data-fc-prox aria-label="Próximo aluno"><i data-i="caret-right" data-w="bold"></i></button>
+    </div>
+  </dialog>
 </section>
