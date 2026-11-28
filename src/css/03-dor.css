@@ -57,7 +57,9 @@
   .dor__gigante { top: 21%; font-size: 18.6vw; }
   .dor__conteudo { position: static; padding: 8PX 0 64PX; min-height: 0; }
   .dor__pergunta { position: absolute; top: 24PX; left: 50%; z-index: 4; translate: -50% 0; font-size: 15PX; }
-  .dor__base { grid-template-columns: 1fr; gap: 28PX; }
+  /* a frase sobe um pouco pra dentro do pé da foto (a pedido do Ricardo, 11/2026); o degradê
+     de baixo já deixa essa faixa escura */
+  .dor__base { position: relative; z-index: 4; margin-top: -72PX; grid-template-columns: 1fr; gap: 28PX; }
   .dor__lista { grid-column: 1; }
   .dor__titulo { font-size: clamp(30PX, 9vw, 38PX); }
   .dor__lista strong { font-size: 20PX; }

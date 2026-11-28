@@ -114,8 +114,8 @@ if (quer('resultados')) {
     'leonardo-depois': [foto('12.40.19 (1)'), { left: 320, top: 492, width: 224, height: 376 }],
     'luciano-antes': [foto('12.32.15'), { left: 643, top: 444, width: 252, height: 548 }],
     'luciano-depois': [foto('12.32.15'), { left: 954, top: 444, width: 262, height: 548 }],
-    'lucas-antes': [AP('caso-lucas'), { left: 0, top: 0, width: 218, height: 405 }],
-    'lucas-depois': [AP('caso-lucas'), { left: 280, top: 0, width: 210, height: 405 }],
+    'lucas-antes': [AP('caso-lucas'), { left: 0, top: 0, width: 218, height: 399 }],
+    'lucas-depois': [AP('caso-lucas'), { left: 280, top: 0, width: 210, height: 399 }],
     'jefferson-antes': [AP('caso-jefferson-antes'), { left: 0, top: 0, width: 246, height: 512 }],
     'jefferson-depois': [AP('caso-jefferson-depois'), { left: 0, top: 0, width: 246, height: 512 }],
     'ele-antes': [foto('12.32.15'), { left: 38, top: 444, width: 250, height: 548 }],
@@ -132,6 +132,8 @@ if (quer('resultados')) {
     const h = Math.min(m.height, Math.round(m.width * 4 / 3))
     const larg = nome.startsWith('ricardo') ? [280, 420] : [216, 280]
     await variantes(`ad-${nome}`, await sharp(buf).extract({ left: 0, top: 0, width: m.width, height: h }).toBuffer(), larg, { q: 60 })
+    // inteira (sem o corte 3:4) pra tela cheia, no tamanho original
+    if (!nome.startsWith('ricardo')) await variantes(`adc-${nome}`, buf, [m.width], { q: 72 })
   }
 }
 

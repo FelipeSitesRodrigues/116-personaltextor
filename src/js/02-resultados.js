@@ -17,15 +17,16 @@
   // cada foto ocupa o espaço que tem sem passar de 2,4x o tamanho real (a foto original é de
   // celular, pequena: maior que isso só borra)
   const encaixar = () => {
-    for (const q of fotos.querySelectorAll('.fc__quadro')) {
+    const qs = [...fotos.querySelectorAll('.fc__quadro')]
+    const med = qs.map((q) => {
       const img = q.querySelector('img')
-      const caixa = q.parentElement
       const larg = +img.getAttribute('width')
-      const r = larg / +img.getAttribute('height')
-      let h = Math.min(caixa.clientHeight, larg * 2.4 / r)
-      let w = h * r
-      if (w > caixa.clientWidth) (w = caixa.clientWidth), (h = w / r)
-      q.style.width = `${Math.round(w)}px`
+      return { q, larg, r: larg / +img.getAttribute('height'), caixa: q.parentElement }
+    })
+    // as duas na mesma altura: a menor que cabe em todas
+    const h = Math.min(...med.map(({ larg, r, caixa }) => Math.min(caixa.clientHeight, caixa.clientWidth / r, larg * 2.4 / r)))
+    for (const { q, r } of med) {
+      q.style.width = `${Math.round(h * r)}px`
       q.style.height = `${Math.round(h)}px`
     }
   }
@@ -43,11 +44,12 @@
       f.className = 'fc__foto'
       const q = document.createElement('div')
       q.className = 'fc__quadro'
-      const pic = fig.querySelector('picture').cloneNode(true)
+      // a versão inteira da foto (o cartão mostra só o recorte 3:4 de cima)
+      const cheia = fig.querySelector('template[data-cheia]')
+      const pic = (cheia ? cheia.content.querySelector('picture') : fig.querySelector('picture')).cloneNode(true)
       const img = pic.querySelector('img')
       img.loading = 'eager'
       img.removeAttribute('class')
-      pic.querySelectorAll('[sizes]').forEach((s) => (s.sizes = '50vw'))
       q.append(pic, fig.querySelector('figcaption').cloneNode(true))
       f.append(q)
       return f

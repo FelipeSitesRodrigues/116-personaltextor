@@ -1018,5 +1018,125 @@
   "w": 941,
   "h": 1176,
   "kb": 37
+ },
+ "adc-leonardo-antes-216.avif": {
+  "w": 216,
+  "h": 376,
+  "kb": 7
+ },
+ "adc-leonardo-antes-216.webp": {
+  "w": 216,
+  "h": 376,
+  "kb": 5
+ },
+ "adc-leonardo-depois-224.avif": {
+  "w": 224,
+  "h": 376,
+  "kb": 12
+ },
+ "adc-leonardo-depois-224.webp": {
+  "w": 224,
+  "h": 376,
+  "kb": 9
+ },
+ "adc-luciano-antes-252.avif": {
+  "w": 252,
+  "h": 548,
+  "kb": 16
+ },
+ "adc-luciano-antes-252.webp": {
+  "w": 252,
+  "h": 548,
+  "kb": 10
+ },
+ "adc-luciano-depois-262.avif": {
+  "w": 262,
+  "h": 548,
+  "kb": 11
+ },
+ "adc-luciano-depois-262.webp": {
+  "w": 262,
+  "h": 548,
+  "kb": 7
+ },
+ "adc-jefferson-antes-246.avif": {
+  "w": 246,
+  "h": 512,
+  "kb": 10
+ },
+ "adc-jefferson-antes-246.webp": {
+  "w": 246,
+  "h": 512,
+  "kb": 6
+ },
+ "adc-jefferson-depois-246.avif": {
+  "w": 246,
+  "h": 512,
+  "kb": 11
+ },
+ "adc-jefferson-depois-246.webp": {
+  "w": 246,
+  "h": 512,
+  "kb": 6
+ },
+ "adc-ele-antes-250.avif": {
+  "w": 250,
+  "h": 548,
+  "kb": 18
+ },
+ "adc-ele-antes-250.webp": {
+  "w": 250,
+  "h": 548,
+  "kb": 13
+ },
+ "adc-ele-depois-264.avif": {
+  "w": 264,
+  "h": 548,
+  "kb": 16
+ },
+ "adc-ele-depois-264.webp": {
+  "w": 264,
+  "h": 548,
+  "kb": 11
+ },
+ "adc-ela-antes-166.avif": {
+  "w": 166,
+  "h": 450,
+  "kb": 12
+ },
+ "adc-ela-antes-166.webp": {
+  "w": 166,
+  "h": 450,
+  "kb": 9
+ },
+ "adc-ela-depois-164.avif": {
+  "w": 164,
+  "h": 450,
+  "kb": 8
+ },
+ "adc-ela-depois-164.webp": {
+  "w": 164,
+  "h": 450,
+  "kb": 5
+ },
+ "adc-lucas-antes-218.avif": {
+  "w": 218,
+  "h": 399,
+  "kb": 8
+ },
+ "adc-lucas-antes-218.webp": {
+  "w": 218,
+  "h": 399,
+  "kb": 5
+ },
+ "adc-lucas-depois-210.avif": {
+  "w": 210,
+  "h": 399,
+  "kb": 9
+ },
+ "adc-lucas-depois-210.webp": {
+  "w": 210,
+  "h": 399,
+  "kb": 6
  }
 }
